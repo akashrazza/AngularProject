@@ -1,0 +1,73 @@
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="model-content">
+        
+        <div class="">
+      
+
+
+
+      <div class="signup-form" style="text-align: end;">	
+        <button type="button" class="btn-close" id="close_modal" data-bs-dismiss="modal" aria-label="Close"></button>
+        <form style="border-radius: 20px">
+        <h2>Login</h2>
+        <p class="lead" *ngIf="valid_user==false">Invalid User</p>
+            <div class="form-group">
+              <div class="input-group" style="padding: 10px;">
+                <div class="input-group-prepend" for="validationServer01">
+                    <span class="input-group-addon"> <i class="fa fa-user" style="height: 24px;"></i> </span>
+                 </div>
+                 <input type="text" class = "form-control" placeholder="Login/Email" [ngClass]="valid_email?'is-valid':'is-invalid'" [ngClass]="valid_user==false?'is-invalid':''" (keyup)="Validate_Email()" [(ngModel)]="Email_Input" name="test" id="validationServer01" required >
+                 <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Looks bad!
+                </div>
+              </div> 
+            </div>
+            <div class="form-group">
+              <div class="input-group" style="padding: 10px;">
+                <div class="input-group-prepend" for="validationServer02" >
+                    <span class="input-group-addon"> <i class="fa fa-lock" style="height: 24px;"></i> </span>
+                 </div>
+                 <input type="password" placeholder="***********" class = "form-control"  [ngClass]="valid_user==false?'is-invalid':''"  [(ngModel)]="Password_Input" id="validationServer02" name="pass" required>
+                 <div class="valid-feedback">
+                   Looks good!
+                 </div>
+                 <div class="invalid-feedback">
+                   Looks bad!
+                 </div>
+              </div>
+            </div>
+        
+            
+        <div class="form-group">
+                <button type="button" class="btn btn-primary btn-block btn-lg" (click)="Validate_user()">Login</button>
+                
+            </div>
+        <p class="small text-center">Login and Explorer World!</p>
+        </form>
+      <!-- <div class="text-center">Already have an account? <a href="#">Login here</a>.</div> -->
+    </div>
+    
+
+
+
+
+
+
+
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="close_modal" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="Validate_user()">Login</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+

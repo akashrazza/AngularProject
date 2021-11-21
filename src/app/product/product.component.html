@@ -1,0 +1,111 @@
+<div class="row">
+    <div>
+      <img src="/assets/sep20.jpg" class="banner"/>
+    </div>
+         
+        <!-- <div>
+            
+        </div> -->
+    
+</div>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast " [ngClass]="[Notification?'show':'hide']" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div>
+<div class="row" style="padding: 20px;">
+    <div class="col-3">
+        <div class="card pos" style="width: 18rem;">
+          <div class="input-group mb-3 head">
+            <input type="text" class="form-group inp" placeholder="Search Product Here" [(ngModel)]="product_Search_input" (keyup)="Search_Product()">
+            <!-- <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span> -->
+        </div> 
+            <div class="card-header">
+              Filter
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Filter by category
+                <ul class="list-group list-group-flush">
+                  <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Electronics'}"><li class="list-group-item">Electronics</li></a>
+                  <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Medicine'}"><li class="list-group-item">Medicine</li></a>
+                  <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Clothing'}"><li class="list-group-item">Clothing</li></a>
+                  <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Glocery'}"><li class="list-group-item">Glocery</li></a>
+                  
+                </ul>
+              </li>
+              <!-- <li class="list-group-item">
+                Filter by Brand
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Electronics</li>
+                  <li class="list-group-item">Medicine</li>
+                  <li class="list-group-item">Clothing</li>
+                  <li class="list-group-item">Glocery</li>
+                  
+                </ul>
+              </li> -->
+              <li class="list-group-item">
+                Sort By:
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" (click)="sort_price_low_to_high()">Low - Hign Price</li>
+                  <li class="list-group-item" (click)="sort_price_high_to_low()">High - Low Price</li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col">
+        <div class="" style="margin-right: 50px;">
+            <div class="">
+              <h5 class="">Filtered Data</h5>
+              <div class="row">
+                    <div class="col-4" *ngFor="let ele of arr_products">
+                        <div class="card shoping-card" style="">
+                            <img class="card-img-top shoping-image-border card-image-header" src={{ele.img}}>
+                            <div class="card-body">
+                              
+                              <div class="row ">
+                                  <div class="col">
+                                    <h5 class="card-title">{{ele.product_name}}</h5>
+                                  </div>
+                                  <div class="col" style="text-align: end;" >
+                                    <button class="btn"><i class="fa fa-shopping-cart" style="font-size:30px;margin-right: 0px;color: rgb(15, 113, 158);" (click)="Add_to_cart(ele)" ></i></button>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                    <div class="col">
+                                        {{ele.tage}}
+                                    </div>
+                                    <div class="col" style="text-align: end;">
+                                        {{ele.price | currency :'INR'}}
+                                    </div>
+                                </div>
+                              <!-- <p class="card-text"><del>$200</del> $100</p> -->
+                              
+                            </div>
+                        </div>
+                    </div>
+              </div>
+
+            </div>
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <!-- <li class="page-item"><a class="page-link" [routerLink]="['/product']" [queryParams]="{'page':page-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" [routerLink]="['/product']" [queryParams]="{'page':page+1}">Next</a></li> -->
+            <li class="page-item"><a class="page-link" (click)=Previous()>Previous</a></li>
+            <li class="page-item page-link">{{page}}</li>
+            <li class="page-item"><a class="page-link" (click)="Next()">Next</a></li>
+          </ul>
+        </nav>
+        
+    </div>
+</div>

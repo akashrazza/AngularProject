@@ -1,0 +1,47 @@
+.shoping-image-border{
+    border-radius: 15px;
+}
+.Card-custom{
+    border: 0rem;
+    align-items: center;
+    text-align: center;
+}
+.shoping-card{
+
+    border: 0rem;
+}
+.checked{
+    color: green;
+}
+.card-image{
+    /* border-radius: 10rem;
+     */
+     border-radius: 10rem;
+     width: 10rem;
+     height: 10rem;
+}
+.pos{position: -webkit-sticky;
+position: sticky;
+top: 20px;}
+
+.head{
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+}
+.inp{
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 20px;
+}
+.banner{
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+.card-image-header{
+    height: 220px;
+    object-fit: contain;
+}
+

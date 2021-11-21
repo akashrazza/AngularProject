@@ -1,0 +1,93 @@
+<div class="modal fade" id="SignupModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="model-content">
+       
+        <div class="">
+            
+  
+
+<div class="signup-form" style="text-align: end;">	
+    <button type="button" class="btn-close" id="close_modal_signup" data-bs-dismiss="modal" aria-label="Close"></button>
+    <form  style="border-radius: 20px" [formGroup]="signupform" (ngSubmit)="onSubmit()">
+		<h2>Create Account</h2>
+		<p class="lead">It's free and hardly takes more than 30 seconds.</p>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span>
+				<input type="text" class="form-control" name="username" formControlName="first_name" placeholder="First Name" required="required" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" >
+                <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                    <div *ngIf="f.first_name.errors.required">First Name is required</div>
+                </div>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span>
+				<input type="text" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }"  class="form-control" name="last_name" formControlName="last_name" placeholder="Last Name" required="required">
+                <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                    <div *ngIf="f.last_name.errors.required">Last Name is required</div>
+                </div>
+			</div>
+
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span>
+				<input type="text" class="form-control" name="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }"  formControlName="city" placeholder="City" required="required">
+                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                    <div *ngIf="f.city.errors.required">City is required</div>
+                </div>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span>
+				<input type="text" class="form-control" name="mobile_no" [ngClass]="{ 'is-invalid': submitted && f.mobile_no.errors }"  formControlName="mobile_no" placeholder="Mobile Number" required="required">
+                <div *ngIf="submitted && f.mobile_no.errors" class="invalid-feedback">
+                    <div *ngIf="f.mobile_no.errors.required">Mobile Number is required</div>
+                </div>
+			</div>
+        </div>
+        
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+				<input type="email" class="form-control" formControlName="email" name="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  placeholder="Email Address" required="required">
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.validation">Email type data</div>
+                </div>
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+				<input type="text" class="form-control"  formControlName="city" name="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  formControlName="password" placeholder="Password" required="required">
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
+			</div>
+        </div>
+		<!-- <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="fa fa-lock"></i>
+					<i class="fa fa-check"></i>
+				</span>
+				<input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+			</div>
+        </div>         -->
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+        </div>
+		<p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
+    </form>
+	<div class="text-center">Already have an account? <a href="#">Login here</a>.</div>
+</div>
+
+
+</div>
+
+</div>
+</div>
+</div>
+

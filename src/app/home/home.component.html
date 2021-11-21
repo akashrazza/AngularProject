@@ -1,0 +1,174 @@
+<div class="container-fluid" style="margin-top: 1px;">
+    <div class="row">
+        <div class="col-10">
+            <div id="carouselExampleControls" class="carousel slide test corusel_boder" data-bs-ride="carousel">
+                <div class="carousel-inner item">
+                  <div class="carousel-item img-wrap">
+                    <img src="assets/image1.jpeg" class="d-block w-100" alt="..." style="height: 465px; object-fit: cover;">
+                  </div>
+                  <div class="carousel-item img-wrap">
+                    <img src="assets/image2.jpeg" class="d-block w-100" alt="..." style="height: 465px; object-fit: cover;">
+                  </div>
+                  <div class="carousel-item img-wrap active">
+                    <img src="assets/imgw3.jpeg" class="d-block w-100" alt="..." style="height: 465px; object-fit: cover;">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+
+        <div class="col-2">
+            <div class="card card_header" style="">
+                <img src="https://m.media-amazon.com/images/I/51zwK5zBswL._SL1000_.jpg" class="card-img-top" alt="..." style="height : 190px">
+                <div class="card-body">
+                  <p class="card-text card_text_head">Sonata Watches</p>
+                  <p class="card-text card_text_head">90% OFF</p>
+                </div>
+            </div>
+            <div class="card card_header" style="">
+                <img src="https://m.media-amazon.com/images/I/71IPFP9WJIL._SL1500_.jpg" class="card-img-top" alt="..." style="height: 190px;">
+                <div class="card-body">
+                  <p class="card-text card_text_head">Earpod</p>
+                  <p class="card-text card_text_head">100% OFF</p>
+                </div>
+            </div>
+            
+        </div>
+
+
+        
+    </div>
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-4">
+            <div class="card mb-3 card_section_2_1">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1577401132921-cb39bb0adcff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVkaWNpbmVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" class="img-fluid rounded-start card_Section_2_img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body card_text_head2">
+                      <h2 class="card-title ">Medicine</h2>
+                      <h2>80% OFF</h2>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-4">
+            <div class="card mb-3 card_section_2_2">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1602526432604-029a709e131c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGdhZGdldHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" class="img-fluid rounded-start card_Section_2_img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body card_text_head2">
+                      <h2 class="card-title">Electronics</h2>
+                      <h2 class="">50% OFF</h2>
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-4">
+            <div class="card mb-3 card_section_2_3">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1560243563-062bfc001d68?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2xvdGhpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" class="img-fluid rounded-start card_Section_2_img" style="" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body card_text_head2">
+                      <h2 class="card-title ">Cloths</h2>
+                      <h2>90% OFF</h2>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <h1>Electronics</h1>
+    <div class="row">
+        <!-- -->
+        <div class="col-2 Header_section4">
+            
+            <img class="shoping-image-border" src="https://images.unsplash.com/photo-1602526432604-029a709e131c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGdhZGdldHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" class="img-fluid rounded-start card_Section_3_img" alt="...">
+            
+        </div>
+        <div class="col-2" *ngFor = "let prod_elec of arr_Electronics">
+            <div class="card shoping-card">
+                <img class="card-img-top shoping-image-border" class="card-image-header" src="{{prod_elec.img}}">
+                <div class="card-body">
+                  
+                  <div class="row ">
+                      <div class="col">
+                        <h5 class="card-title">{{prod_elec.product_name}}</h5>
+                      </div>
+                      
+                  </div>
+                  <div class="row">
+                        <div class="col">
+                            {{prod_elec.category}}
+                        </div>
+                        <div class="col" style="text-align: start;">
+                            {{prod_elec.price | currency : 'USD'}}
+                        </div>
+                    </div>
+                  <!-- <p class="card-text"><del>$200</del> $100</p> -->
+                  
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+
+
+
+    <h1>Clothing</h1>
+    <div class="row">
+        <!-- -->
+        <div class="col-2 Header_section4">
+            
+            <img src="https://images.unsplash.com/photo-1560243563-062bfc001d68?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2xvdGhpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" class="img-fluid rounded-start card_Section_3_img" alt="...">
+            
+        </div>
+        <div class="col-2" *ngFor = "let prod_elec of arr_Clothing">
+          <div class="card shoping-card">
+              <img class="card-img-top shoping-image-border card-image-header" src="{{prod_elec.img}}">
+              <div class="card-body">
+                
+                <div class="row ">
+                    <div class="col">
+                      <h5 class="card-title">{{prod_elec.product_name}}</h5>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                      <div class="col">
+                          {{prod_elec.category}}
+                      </div>
+                      <div class="col" style="text-align: start;">
+                          {{prod_elec.price | currency : 'USD'}}
+                      </div>
+                  </div>
+                <!-- <p class="card-text"><del>$200</del> $100</p> -->
+                
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+
+
+

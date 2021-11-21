@@ -1,0 +1,44 @@
+
+  <!-- Modal -->
+  <div class="modal fade " id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor = "let cart_data of cart_arr">
+                    <th scope="row">{{cart_data.id}}</th>
+                    <td>{{cart_data.product_name}}</td>
+                    <td><img src={{cart_data.image}} height="50px"/></td>
+                    <td>{{cart_data.price | currency : 'INR'}}</td>
+                    <td><button type="button" class="btn-close" (click)="Remove_ele(cart_data.id)"></button></td>
+                  </tr>
+                </tbody>
+            </table>
+            <!-- <div style="    display: flex;justify-content: space-between;" *>
+                <p>Popover in a modal</p>
+                <p>price</p>
+                <p>quantity</p>
+                <p>action</p>
+                <hr>
+            </div> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Buy</button>
+        </div>
+      </div>
+    </div>
+  </div>

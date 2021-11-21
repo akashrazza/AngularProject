@@ -1,0 +1,10 @@
+.banner{
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+.prod_image{
+    height: 400px;
+    width: 600px;
+        object-fit: contain;
+}
