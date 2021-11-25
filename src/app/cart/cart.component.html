@@ -11,6 +11,7 @@
             <table class="table">
                 <thead>
                   <tr>
+                    <th>check</th>
                     <th scope="col">Id</th>
                     <th scope="col">Product</th>
                     <th scope="col">Image</th>
@@ -19,6 +20,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor = "let cart_data of cart_arr">
+                    <td><input type="checkbox" [checked]="cart_data.checked" (click)="convertcheckbox(cart_data.id,$event)"></td>
                     <th scope="row">{{cart_data.id}}</th>
                     <td>{{cart_data.product_name}}</td>
                     <td><img src={{cart_data.image}} height="50px"/></td>
@@ -36,8 +38,8 @@
             </div> -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Buy</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close_modal_cart">Close</button>
+          <button type="button" class="btn btn-primary" (click)="cart_arr.length==0?'':nav()">Buy</button>
         </div>
       </div>
     </div>

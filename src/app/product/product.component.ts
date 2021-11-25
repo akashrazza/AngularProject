@@ -130,7 +130,7 @@ export class ProductComponent implements OnInit {
   }
   Notification = false;
   Add_to_cart(ele:Product){
-    let cart_obj = new Cart(ele.id,ele.product_name,ele.price,ele.img)
+    let cart_obj = new Cart(ele.id,ele.product_name,ele.price,ele.img,ele.category)
     this.cartservice.Add_Cart(cart_obj);
     this.notificationservice.Show_notification("Product "+ ele.product_name+" Added to Cart");
   }

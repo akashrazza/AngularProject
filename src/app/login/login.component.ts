@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   Email_Input:string = "";
   Password_Input:string = "";
+  // submited=false;
   constructor(private authservice : AuthenticationService, private router : Router) { 
     
   }
@@ -34,6 +35,10 @@ export class LoginComponent implements OnInit {
     this.authservice.Login(this.Email_Input,this.Password_Input).subscribe(
       (data)=>{console.log(data);if(data.length==0){this.valid_user=false}else{
         localStorage.setItem("IsLogin","true");
+        this.Email_Input="";
+        this.Password_Input="";
+        this.valid_user=undefined;
+        this.valid_email=false;
         let ele:HTMLElement = document.getElementById('close_modal') as HTMLElement 
         ele.click();
         this.login_valid.emit("true");
@@ -43,6 +48,14 @@ export class LoginComponent implements OnInit {
     );
     
     
+  }
+  close(){
+    this.Email_Input="";
+    this.Password_Input="";
+    this.valid_user=undefined;
+    this.valid_email=false;
+    let ele:HTMLElement = document.getElementById('close_modal') as HTMLElement 
+    ele.click();
   }
 
 }

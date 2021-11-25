@@ -105,7 +105,7 @@
             
         </div>
         <div class="col-2" *ngFor = "let prod_elec of arr_Electronics">
-            <div class="card shoping-card">
+            <div class="card shoping-card" [routerLink]="['/product_detail',prod_elec.category,prod_elec.id]"  style="cursor:pointer">
                 <img class="card-img-top shoping-image-border" class="card-image-header" src="{{prod_elec.img}}">
                 <div class="card-body">
                   
@@ -143,7 +143,7 @@
             
         </div>
         <div class="col-2" *ngFor = "let prod_elec of arr_Clothing">
-          <div class="card shoping-card">
+          <div class="card shoping-card" [routerLink]="['/product_detail',prod_elec.category,prod_elec.id]"  style="cursor:pointer">
               <img class="card-img-top shoping-image-border card-image-header" src="{{prod_elec.img}}">
               <div class="card-body">
                 

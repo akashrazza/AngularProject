@@ -12,7 +12,7 @@
 
 
       <div class="signup-form" style="text-align: end;">	
-        <button type="button" class="btn-close" id="close_modal" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" id="close_modal" (click)="close()" data-bs-dismiss="modal" aria-label="Close"></button>
         <form style="border-radius: 20px">
         <h2>Login</h2>
         <p class="lead" *ngIf="valid_user==false">Invalid User</p>
@@ -21,10 +21,8 @@
                 <div class="input-group-prepend" for="validationServer01">
                     <span class="input-group-addon"> <i class="fa fa-user" style="height: 24px;"></i> </span>
                  </div>
-                 <input type="text" class = "form-control" placeholder="Login/Email" [ngClass]="valid_email?'is-valid':'is-invalid'" [ngClass]="valid_user==false?'is-invalid':''" (keyup)="Validate_Email()" [(ngModel)]="Email_Input" name="test" id="validationServer01" required >
-                 <div class="valid-feedback">
-                  Looks good!
-                </div>
+                 <input type="text" class = "form-control" placeholder="Login/Email" [ngClass]="valid_user==false?'is-invalid':''" (keyup)="Validate_Email()" [(ngModel)]="Email_Input" name="test" id="validationServer01" required >
+                 
                 <div class="invalid-feedback">
                   Looks bad!
                 </div>

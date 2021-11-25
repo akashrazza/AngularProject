@@ -1,17 +1,52 @@
 <section>
     <div class="row">
         <div>
-          <img src="/assets/sep20.jpg" class="banner"/>
+          <img src="/assets/12130.jpg" class="banner1"/>
         </div>  
     </div>
     <div class="container">
         <div class="row" style="margin-top: 50px;">
             <div class="col">
-                <img src="https://m.media-amazon.com/images/I/71hP1JEHDFL._SL1500_.jpg" class="prod_image">
+                <img src={{product.img}} class="prod_image">
             </div>
-            <div class="col">
-hi
+            <div class="col" style="padding:60px">
+                <h1>{{product.product_name}}</h1>
+                <h5>Only at : </h5><h2> &nbsp;&nbsp;&nbsp;&nbsp; {{product.price|currency:'INR'}}</h2>
+                <h4>Product Type : {{product.category}}</h4>
+                <h5>Tags : {{product.tage}}</h5>
+                <button class="btn btn-primary button-buy" (click)="AddToCart()"> Buy Now </button>
             </div>
         </div>
     </div>
+    <div class="container" style="margin-top:30px">
+    <h5> Similar Products</h5>
+    <div class="row">
+        <!-- -->
+        
+        <div class="col-2" *ngFor = "let prod_elec of product_type">
+          <div class="card shoping-card"style="cursor:pointer" [routerLink]="['/product_detail',prod_elec.category,prod_elec.id]">
+              <img class="card-img-top shoping-image-border card-image-header"  src="{{prod_elec.img}}">
+              <div class="card-body">
+                
+                <div class="row "  >
+                    <div class="col">
+                      <h5 class="card-title">{{prod_elec.product_name}}</h5>
+                    </div>
+                    
+                </div>
+                <div class="row"  >
+                      <div class="col">
+                          {{prod_elec.category}}
+                      </div>
+                      <div class="col" style="text-align: start;">
+                          {{prod_elec.price | currency : 'USD'}}
+                      </div>
+                  </div>
+                <!-- <p class="card-text"><del>$200</del> $100</p> -->
+                
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
 </section>

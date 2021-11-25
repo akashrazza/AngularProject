@@ -3,11 +3,13 @@ export class Cart{
     product_name:string="";
     price:number=0;
     image:string="";
-
-    constructor(id:number,product_name:string,price:number,image:string){
+    checked:boolean=false
+    category:string=""
+    constructor(id:number,product_name:string,price:number,image:string,category:string){
         this.id = id;
         this.product_name = product_name;
         this.price = price;
         this.image = image;
+        this.category = category
     }
 }

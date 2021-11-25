@@ -13,12 +13,16 @@ export class ProductService {
       var page_event = "?_page="+page+"&_limit=9"
       return this.http.get(this.url+page_event)
   }
+  GetProductsById(id:number){
+    let custom_url = this.url + "/" + id;
+    return this.http.get(custom_url);
+  }
   GetProductsByType(type:string,page_no:number):Observable<any>{
     let custom_url = this.url + "?Type=" + type + "&_page="+page_no+"&_limit=9"
     return this.http.get(custom_url);
   }
   GetProductsByCategory(cat:string,page_no:number):Observable<any>{
-    let custom_url = this.url + "?Category=" + cat + "&_page="+page_no+"&_limit=9"
+    let custom_url = this.url + "?category=" + cat + "&_page="+page_no+"&_limit=9"
     return this.http.get(custom_url);
   }
   GetProductsByPrice(price:string,page_no:number):Observable<any>{

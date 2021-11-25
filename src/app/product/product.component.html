@@ -36,9 +36,9 @@
                 Filter by category
                 <ul class="list-group list-group-flush">
                   <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Electronics'}"><li class="list-group-item">Electronics</li></a>
-                  <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Medicine'}"><li class="list-group-item">Medicine</li></a>
+                  <!-- <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Medicine'}"><li class="list-group-item">Medicine</li></a> -->
                   <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Clothing'}"><li class="list-group-item">Clothing</li></a>
-                  <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Glocery'}"><li class="list-group-item">Glocery</li></a>
+                  <!-- <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Glocery'}"><li class="list-group-item">Glocery</li></a> -->
                   
                 </ul>
               </li>
@@ -55,8 +55,8 @@
               <li class="list-group-item">
                 Sort By:
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item" (click)="sort_price_low_to_high()">Low - Hign Price</li>
-                  <li class="list-group-item" (click)="sort_price_high_to_low()">High - Low Price</li>
+                  <li class="list-group-item" style="cursor:pointer" (click)="sort_price_low_to_high()">Low - High Price</li>
+                  <li class="list-group-item" style="cursor:pointer" (click)="sort_price_high_to_low()">High - Low Price</li>
                 </ul>
               </li>
             </ul>
@@ -65,22 +65,22 @@
     <div class="col">
         <div class="" style="margin-right: 50px;">
             <div class="">
-              <h5 class="">Filtered Data</h5>
+              <h5>Products</h5>
               <div class="row">
                     <div class="col-4" *ngFor="let ele of arr_products">
                         <div class="card shoping-card" style="">
-                            <img class="card-img-top shoping-image-border card-image-header" src={{ele.img}}>
+                            <img class="card-img-top shoping-image-border card-image-header" src={{ele.img}} style="cursor:pointer" [routerLink]="['/product_detail',ele.category,ele.id]">
                             <div class="card-body">
                               
                               <div class="row ">
-                                  <div class="col">
+                                  <div class="col" [routerLink]="['/product_detail',ele.category,ele.id]"  style="cursor:pointer">
                                     <h5 class="card-title">{{ele.product_name}}</h5>
                                   </div>
                                   <div class="col" style="text-align: end;" >
                                     <button class="btn"><i class="fa fa-shopping-cart" style="font-size:30px;margin-right: 0px;color: rgb(15, 113, 158);" (click)="Add_to_cart(ele)" ></i></button>
                                   </div>
                               </div>
-                              <div class="row">
+                              <div class="row" [routerLink]="['/product_detail',ele.category,ele.id]" style="cursor:pointer">
                                     <div class="col">
                                         {{ele.tage}}
                                     </div>

@@ -10,30 +10,30 @@
       "password": "123"
     },
     {
-      "first_name": "Tarun",
-      "last_name": "Komera",
-      "city": "Test",
-      "mobile_no": "886393754",
-      "email": "tarun@gmail.com",
+      "first_name": "raja",
+      "last_name": "kumar",
+      "city": "Siwan",
+      "mobile_no": "8863830652",
+      "email": "akashrazza@gmail.com",
       "password": "123",
       "id": 2
     },
     {
-      "first_name": "charan",
-      "last_name": "kumar",
-      "city": "banglore",
-      "mobile_no": "1234567890",
-      "email": "charan@gmail.com",
+      "first_name": "Tarun",
+      "last_name": "Komera",
+      "city": "Bhopal",
+      "mobile_no": "8863830653",
+      "email": "tarun@gmail.com",
       "password": "123",
       "id": 3
     },
     {
-      "first_name": "Vijay",
-      "last_name": "Kumar",
-      "city": "Siwan",
-      "mobile_no": "9835607873",
-      "email": "vijay@gmail.com",
-      "password": "123",
+      "first_name": "Jayesh",
+      "last_name": "patil",
+      "city": "Delhi",
+      "mobile_no": "1223456789",
+      "email": "jayesh@gmail.com",
+      "password": "12",
       "id": 4
     }
   ],

@@ -14,7 +14,7 @@ export class RouteGuardService {
     }
     else{
       alert("Please Login");
-      this.router.navigate(['login']);
+      this.router.navigate(['/home']);
       return false;
     }
   }

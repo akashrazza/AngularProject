@@ -20,8 +20,10 @@ export class CartService {
     this.data.next([...this.data.getValue(),cart_obj])
     // this.cart.push(cart_obj);
     console.log(this.data,this.cart)
+    console.log(this.cart)
   }
   Get_Cart(){
+    console.log(this.cart)
     return this.cart;
   }
   Delete(id:number){
@@ -35,5 +37,9 @@ export class CartService {
     }
     arr.splice(index,1);
     this.data.next(arr);
+  }
+  delet_all(){
+    this.data.next([])
+    this.cart=[]
   }
 }
