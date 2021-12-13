@@ -7,12 +7,11 @@ import { ActivatedRoute, RouterLinkActive } from '@angular/router';
   styleUrls: ['./payment-sucess.component.css']
 })
 export class PaymentSucessComponent implements OnInit {
-  card_data=""
-  constructor(private routeractive : ActivatedRoute) { 
+  card_data = ""
+  constructor(private routeractive: ActivatedRoute) {
+    //Get Transaction id
     this.routeractive.paramMap.subscribe((data: any) => {
       this.card_data = data.get('id');
-     
-
     })
   }
 

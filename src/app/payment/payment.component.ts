@@ -14,41 +14,39 @@ import { Router } from '@angular/router';
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.css']
 })
-export class PaymentComponent  {
-  
-  ///////////////////
+export class PaymentComponent {
+
   elements: any;
   card: any;
- 
-  // optional parameters
   elementsOptions: StripeElementsOptions = {
     locale: 'auto'
   };
- 
+
   stripeTest!: FormGroup;
- 
+
+  PaymentDetailsObject: any = {
+    amount: this.paymentservice.GetPaymentDetails().amount
+  }
+  Address_data = this.paymentservice.GetPaymentDetails().address;
+
   constructor(
     private fb: FormBuilder,
     private stripeService: StripeService,
-    private paymentservice : PaymentService,
-    private orderService : OrderService,
-    private AddressService : AddressService,
-    private router : Router) {
-    }
-
-  PaymentDetailsObject:any={
-    amount:this.paymentservice.GetPaymentDetails().amount
+    private paymentservice: PaymentService,
+    private orderService: OrderService,
+    private AddressService: AddressService,
+    private router: Router) {
   }
-  Address_data=this.paymentservice.GetPaymentDetails().address;
+
   ngOnInit() {
-   console.log(this.Address_data)
+    //Create payment card
     this.stripeTest = this.fb.group({
       name: ['', [Validators.required]]
     });
     this.stripeService.elements(this.elementsOptions)
       .subscribe(elements => {
         this.elements = elements;
-        // Only mount the element the first time
+
         if (!this.card) {
           this.card = this.elements.create('card', {
             style: {
@@ -69,33 +67,35 @@ export class PaymentComponent  {
         }
       });
   }
-  OrderData ={AddressId:this.Address_data.id,products:this.paymentservice.GetPaymentDetails().products,user_id:localStorage.getItem('user_details'),Amount:this.PaymentDetailsObject.amount,Payment:"SUCCESS"}
+
+
+  OrderData = { AddressId: this.Address_data.id, products: this.paymentservice.GetPaymentDetails().products, user_id: localStorage.getItem('user_details'), Amount: this.PaymentDetailsObject.amount, Payment: "SUCCESS" }
+
+//ON CLICK buy event
   buy() {
     const name = this.stripeTest.value.name;
-    // console.log(this.Address_data.id)
-    // console.log(localStorage.getItem('user_details'))
     console.log(this.OrderData)
     this.stripeService
       .createToken(this.card, { name })
       .subscribe(result => {
         if (result.token) {
-          this.paymentservice.PaymentConfirmation({...result,amount:this.PaymentDetailsObject.amount}).subscribe((data)=>{
+          this.paymentservice.PaymentConfirmation({ ...result, amount: this.PaymentDetailsObject.amount }).subscribe((data) => {
             console.log(data)
-            if(data=="Payment Sucessfull"){
+            if (data == "Payment Sucessfull") {
               this.orderService.CreateOrder(this.OrderData)
-              .subscribe(data=>{
-                this.router.navigate(['payment_sucess',result.token?.card?.id])
-              },
-              (err)=>{
-                alert("Some Went Wrong")
-                console.log(err);
-              })
+                .subscribe(data => {
+                  this.router.navigate(['payment_sucess', result.token?.card?.id])
+                },
+                  (err) => {
+                    alert("Some Went Wrong")
+                    console.log(err);
+                  })
             }
-          },(err)=>{
+          }, (err) => {
             alert(err);
             console.log(err);
           })
-          
+
           console.log(result.token);
         } else if (result.error) {
           // Error creating the token

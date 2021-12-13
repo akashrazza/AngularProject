@@ -10,10 +10,16 @@ import { TrackService } from '../services/track.service';
 export class OrdersComponent implements OnInit {
   OrderId=-1
   Active_Track=false;
-  constructor(private orderService : OrderService,private trackservice:TrackService) { }
   OrderHistory:any[] = [];
   trackingData:any=[]
   role = localStorage.getItem('role');
+  step1=''
+  step2=''
+  step3=''
+  step4=''
+
+  constructor(private orderService : OrderService,private trackservice:TrackService) { }
+
   ngOnInit(): void {
     if(this.role=='admin'){
       this.GetAllData();
@@ -23,9 +29,9 @@ export class OrdersComponent implements OnInit {
     }
   }
 
+  //Get All orders for Admin
   GetAllData(){
     this.orderService.GetAllOrder().subscribe(data=>{
-      console.log(data)
       this.OrderHistory=data;
     },
     (err)=>{
@@ -33,10 +39,7 @@ export class OrdersComponent implements OnInit {
     })
   }
 
-  step1=''
-  step2=''
-  step3=''
-  step4=''
+  //Handle Track css 
   Track(id:any){
     this.Active_Track=!this.Active_Track;
     this.OrderId=id;
@@ -64,6 +67,8 @@ export class OrdersComponent implements OnInit {
       }
     },err=>{console.log(err)})
   }
+
+  //Get Orders By user
   GetData(){
     this.orderService.GetOrder(localStorage.getItem('user_details')).subscribe(data=>{
       this.OrderHistory=data;
@@ -72,6 +77,8 @@ export class OrdersComponent implements OnInit {
       console.log(err);
     })
   }
+
+  //Delete Orders
   DeleteOrder(id:any){
     this.orderService.DeleteOrder(id).subscribe((data)=>{
       alert("deleted Sucessfully");
@@ -79,11 +86,15 @@ export class OrdersComponent implements OnInit {
     },
     err=>{console.log(err)})
   }
+
+  //Admin Move order track to next step
   NextStep(order_id:any,step:any){
     this.trackservice.CreateTrack({order_id:order_id,step:step,Description:''}).subscribe((data=>{
       this.Track(order_id);
     }),err=>{console.log(err);})
   }
+
+  //Admin Move order track to previous step
   DeleteStep(id:any,order_id:any){
     this.trackservice.DeletTrack(id).subscribe((data)=>{
       this.Track(order_id)

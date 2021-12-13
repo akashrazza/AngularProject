@@ -19,11 +19,11 @@ import { SignupComponent } from './signup/signup.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-import { AddProductComponent } from './add-product/add-product.component';
+
 import { KeysPipe } from './keys.pipe';
 import { SlicePipe } from './slice.pipe';
 import { ImageZoomComponent } from './image-zoom/image-zoom.component';
-import { VariantsComponent } from './variants/variants.component';
+
 import { NgxStripeModule } from 'ngx-stripe';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentSucessComponent } from './payment-sucess/payment-sucess.component';
@@ -44,11 +44,11 @@ import { OrdersComponent } from './orders/orders.component';
     ProductDetailComponent,
     CheckoutComponent,
     ForgetPasswordComponent,
-    AddProductComponent,
+    
     KeysPipe,
     SlicePipe,
     ImageZoomComponent,
-    VariantsComponent,
+    
     PaymentComponent,
     PaymentSucessComponent,
     OrdersComponent,

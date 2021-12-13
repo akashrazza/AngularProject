@@ -13,38 +13,37 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor(private router: Router, private productservice: ProductService, private routeractive: ActivatedRoute, private cartservice: CartService, private notificationservice: NotificationService) {
-    this.router.routeReuseStrategy.shouldReuseRoute = function () {
-      return false;
-    };
-    this.routeractive.paramMap.subscribe((data: any) => {
-      this.id = data.get('id');
-      this.category = data.get('category');
-
-    })
-  }
   role=localStorage.getItem('role');
   id: number = 0
   product: any = {};
   category: string = '';
   product_type: Product[] = [];
-  ngOnInit(): void {
+  objectKeys = Object.keys;
+  Variant_choose_id: any = '';
 
-    // console.log(this.id)
+  constructor(private router: Router, private productservice: ProductService, private routeractive: ActivatedRoute, private cartservice: CartService, private notificationservice: NotificationService) {
+    //route Resuse
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+    //Param get
+    this.routeractive.paramMap.subscribe((data: any) => {
+      this.id = data.get('id');
+      this.category = data.get('category');
+    })
+  }
+  
+  ngOnInit(): void {
     this.productservice.GetProductsById(this.id).subscribe((data) => {
       this.product = data;
       console.log(this.product)
     })
-
     this.productservice.GetProductsByCategory(this.category, 1).subscribe((data) => {
       this.product_type = data.slice(0, 7);
     })
-
-  }
-  ngDoCheck() {
-
   }
 
+  //Add to cart  Event
   AddToCart() {
     let ele = this.product
     if (this.Variant_choose_id == ''){ alert("Please Choose a variant");return;}
@@ -55,15 +54,17 @@ export class ProductDetailComponent implements OnInit {
     ele1.click();
     this.Variant_choose_id = '';
   }
+  //Handle redirect in similar section
   redirect(id: number, category: string) {
     this.router.navigate(['/product_detail', category, id])
   }
-  objectKeys = Object.keys;
-  Variant_choose_id: any = '';
+ 
+  //Close variant tab event
   close_varinat_tab() {
     let ele: HTMLElement = document.getElementById('btn-close-variant-product') as HTMLElement
     ele.click();
   }
+  //Slect Variant radio
   select_variant_radio(id: number) {
     this.Variant_choose_id = id;
   }

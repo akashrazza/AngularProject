@@ -1,15 +1,16 @@
 <div class="row">
-    <div>
-      <img src="/assets/sep20.jpg" class="banner"/>
-    </div>
-         
-        <!-- <div>
+  <div>
+    <img src="/assets/sep20.jpg" class="banner" />
+  </div>
+
+  <!-- <div>
             
         </div> -->
-    
+
 </div>
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-  <div id="liveToast" class="toast " [ngClass]="[Notification?'show':'hide']" role="alert" aria-live="assertive" aria-atomic="true">
+  <div id="liveToast" class="toast " [ngClass]="[Notification?'show':'hide']" role="alert" aria-live="assertive"
+    aria-atomic="true">
     <div class="toast-header">
       <img src="..." class="rounded me-2" alt="...">
       <strong class="me-auto">Bootstrap</strong>
@@ -22,27 +23,32 @@
   </div>
 </div>
 <div class="row" style="padding: 20px;">
-    <div class="col-3">
-        <div class="card pos" style="width: 18rem;">
-          <div class="input-group mb-3 head">
-            <input type="text" class="form-group inp" placeholder="Search Product Here" [(ngModel)]="product_Search_input" (keyup)="Search_Product()">
-            <!-- <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span> -->
-        </div> 
-            <div class="card-header">
-              Filter
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                Filter by category
-                <ul class="list-group list-group-flush">
-                  <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Electronics'}"><li class="list-group-item">Electronics</li></a>
-                  <!-- <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Medicine'}"><li class="list-group-item">Medicine</li></a> -->
-                  <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Clothing'}"><li class="list-group-item">Clothing</li></a>
-                  <!-- <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Glocery'}"><li class="list-group-item">Glocery</li></a> -->
-                  
-                </ul>
-              </li>
-              <!-- <li class="list-group-item">
+  <div class="col-3">
+    <div class="card pos" style="width: 18rem;">
+      <div class="input-group mb-3 head">
+        <input type="text" class="form-group inp" placeholder="Search Product Here" [(ngModel)]="product_Search_input"
+          (keyup)="Search_Product()">
+        <!-- <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span> -->
+      </div>
+      <div class="card-header">
+        Filter
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Filter by category
+          <ul class="list-group list-group-flush">
+            <a routerLinkActive="active" [routerLink]="['/product']" [queryParams]="{'category':'Electronics'}">
+              <li class="list-group-item">Electronics</li>
+            </a>
+            <!-- <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Medicine'}"><li class="list-group-item">Medicine</li></a> -->
+            <a routerLinkActive="active" [routerLink]="['/product']" [queryParams]="{'category':'Clothing'}">
+              <li class="list-group-item">Clothing</li>
+            </a>
+            <!-- <a routerLinkActive = "active" [routerLink]="['/product']" [queryParams]="{'category':'Glocery'}"><li class="list-group-item">Glocery</li></a> -->
+
+          </ul>
+        </li>
+        <!-- <li class="list-group-item">
                 Filter by Brand
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">Electronics</li>
@@ -52,90 +58,99 @@
                   
                 </ul>
               </li> -->
-              <li class="list-group-item">
-                Sort By:
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item" style="cursor:pointer" (click)="sort_price_low_to_high()">Low - High Price</li>
-                  <li class="list-group-item" style="cursor:pointer" (click)="sort_price_high_to_low()">High - Low Price</li>
-                </ul>
-              </li>
-            </ul>
-        </div>
-    </div>
-    <div class="col">
-        <div class="" style="margin-right: 50px;">
-            <div class="">
-              <h3>Products</h3>
-              <div class="row">
-                    <div class="col-4" *ngFor="let ele of arr_products">
-                        <div class="card shoping-card">
-                          
-                            <img class="card-img-top shoping-image-border card-image-header" src={{ele.img}} style="cursor:pointer" [routerLink]="['/product_detail',ele.category,ele.id]">
-                            <div class="card-body">
-                              
-                              <div class="row ">
-                                  <div class="col" [routerLink]="['/product_detail',ele.category,ele.id]"  style="cursor:pointer">
-                                    <h5 class="card-title">{{ele.product_name}}</h5>
-                                  </div>
-                                  <div class="col" style="text-align: end;" >
-                                    <button class="btn" *ngIf="role=='user'"><i class="fa fa-shopping-cart" style="font-size:30px;margin-right: 0px;color: rgb(15, 113, 158);"   data-bs-toggle="modal" data-bs-target="#VariantModalProduct" (click)="select_product(ele)" ></i></button>
-                                  </div>
-                              </div>
-                              <div class="row" [routerLink]="['/product_detail',ele.category,ele.id]" style="cursor:pointer">
-                                    
-                                    <div class="col" style="text-align: end;">
-                                        {{ele.price | currency :'INR'}}
-                                    </div>
-                                </div>
-                              <!-- <p class="card-text"><del>$200</del> $100</p> -->
-                              
-                            </div>
-                        </div>
-                    </div>
-              </div>
-
-            </div>
-        </div>
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <!-- <li class="page-item"><a class="page-link" [routerLink]="['/product']" [queryParams]="{'page':page-1}">Previous</a></li>
-            <li class="page-item"><a class="page-link" [routerLink]="['/product']" [queryParams]="{'page':page+1}">Next</a></li> -->
-            <li class="page-item"><a class="page-link" (click)=Previous()>Previous</a></li>
-            <li class="page-item page-link">{{page}}</li>
-            <li class="page-item"><a class="page-link" (click)="Next()">Next</a></li>
+        <li class="list-group-item">
+          Sort By:
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="cursor:pointer" (click)="sort_price_low_to_high()">Low - High Price</li>
+            <li class="list-group-item" style="cursor:pointer" (click)="sort_price_high_to_low()">High - Low Price</li>
           </ul>
-        </nav>
-        
+        </li>
+      </ul>
     </div>
-</div>
+  </div>
+  <div class="col">
+    <div class="" style="margin-right: 50px;">
+      <div class="">
+        <h3>Products</h3>
+        <div class="row">
+          <div class="col-4" *ngFor="let ele of arr_products">
+            <div class="card shoping-card">
 
+              <img class="card-img-top shoping-image-border card-image-header" src={{ele.img}} style="cursor:pointer"
+                [routerLink]="['/product_detail',ele.category,ele.id]">
+              <div class="card-body">
 
-<div class="modal fade" id="VariantModalProduct" tabindex="-1" aria-labelledby="VariantModalLabelProduct" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="model-content">
-      <div class="signup-form" style="text-align: end;">	
-      <button type="button" class="btn-close" id="btn-close-variant-product" (click)="close_varinat_tab()" data-bs-dismiss="modal" aria-label="Close"></button>
-        <form style="border-radius: 20px">
-        <h2>Variants</h2>
-        <div class="">
-          <div  *ngFor="let vari of selected_product.variants">
-            <div *ngIf="vari.quantity!=0" style="margin-top:10px;display: flex;justify-content: space-evenly;align-items: center;">
-                <input type="radio" style="width: 20px;" id="featured-{{vari.id}}" name="featured" (click)="select_variant_radio(vari.id)">
-                <div style="height: 50px;width: 50px;border-radius: 50px;border-width: 1px;border: solid;" [ngStyle]="{'background-color':vari.color}"></div>
-                <label for="featured-{{vari.id}}" style="font-size: 20px;width: 20px;">{{vari.color}} {{vari.size}}</label>
+                <div class="row ">
+                  <div class="col" [routerLink]="['/product_detail',ele.category,ele.id]" style="cursor:pointer">
+                    <h5 class="card-title">{{ele.product_name}}</h5>
+                  </div>
+                  <div class="col" style="text-align: end;">
+                    <button class="btn" *ngIf="role=='user'"><i class="fa fa-shopping-cart"
+                        style="font-size:30px;margin-right: 0px;color: rgb(15, 113, 158);" data-bs-toggle="modal"
+                        data-bs-target="#VariantModalProduct" (click)="select_product(ele)"></i></button>
+                  </div>
+                </div>
+                <div class="row" [routerLink]="['/product_detail',ele.category,ele.id]" style="cursor:pointer">
+
+                  <div class="col" style="text-align: end;">
+                    {{ele.price | currency :'INR'}}
+                  </div>
+                </div>
+                <!-- <p class="card-text"><del>$200</del> $100</p> -->
+
+              </div>
             </div>
           </div>
         </div>
-        <div class="form-group" style="margin-top: 20px;">
-                <button type="button" class="btn btn-primary btn-block btn-lg" (click)="Add_to_cart()">Add to Cart</button>
-                
+
+      </div>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <!-- <li class="page-item"><a class="page-link" [routerLink]="['/product']" [queryParams]="{'page':page-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" [routerLink]="['/product']" [queryParams]="{'page':page+1}">Next</a></li> -->
+        <li class="page-item"><a class="page-link" (click)=Previous()>Previous</a></li>
+        <li class="page-item page-link">{{page}}</li>
+        <li class="page-item"><a class="page-link" (click)="Next()">Next</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+
+
+<div class="modal fade" id="VariantModalProduct" tabindex="-1" aria-labelledby="VariantModalLabelProduct"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="model-content">
+      <div class="signup-form" style="text-align: end;">
+        <button type="button" class="btn-close" id="btn-close-variant-product" (click)="close_varinat_tab()"
+          data-bs-dismiss="modal" aria-label="Close"></button>
+        <form style="border-radius: 20px">
+          <h2>Variants</h2>
+          <div class="">
+            <div *ngFor="let vari of selected_product.variants">
+              <div *ngIf="vari.quantity!=0"
+                style="margin-top:10px;display: flex;justify-content: space-evenly;align-items: center;">
+                <input type="radio" style="width: 20px;" id="featured-{{vari.id}}" name="featured"
+                  (click)="select_variant_radio(vari.id)">
+                <div style="height: 50px;width: 50px;border-radius: 50px;border-width: 1px;border: solid;"
+                  [ngStyle]="{'background-color':vari.color}"></div>
+                <label for="featured-{{vari.id}}" style="font-size: 20px;width: 20px;">{{vari.color}}
+                  {{vari.size}}</label>
+              </div>
             </div>
-        <p class="small text-center">Choose Your variant here.</p>
-        
+          </div>
+          <div class="form-group" style="margin-top: 20px;">
+            <button type="button" class="btn btn-primary btn-block btn-lg" (click)="Add_to_cart()">Add to Cart</button>
+
+          </div>
+          <p class="small text-center">Choose Your variant here.</p>
+
         </form>
-          
-     
-     </div>
+
+
+      </div>
     </div>
   </div>
 </div>

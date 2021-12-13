@@ -27,7 +27,8 @@
         <h2> &nbsp;&nbsp;&nbsp;&nbsp; {{product.price|currency:'INR'}}</h2>
         <h4>Product Type : {{product.category}}</h4>
         <h5>Tags : {{product.tage}}</h5>
-        <button  *ngIf="role=='user'" class="btn btn-primary button-buy" data-bs-toggle="modal" data-bs-target="#VariantModalProduct"> Buy Now
+        <button *ngIf="role=='user'" class="btn btn-primary button-buy" data-bs-toggle="modal"
+          data-bs-target="#VariantModalProduct"> Buy Now
         </button>
 
         <div style="padding: 10px;margin-top: 15px;">
