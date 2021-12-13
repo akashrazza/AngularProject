@@ -25,6 +25,7 @@ export class CartComponent implements OnInit {
   getAllCart(){
     // this.cart_arr = this.cartservice.Get_Cart();
     this.cartservice.data$.subscribe((res)=>this.cart_arr=res)
+    this.cartservice.Get_Cart()
     // console.log(this.cart_arr)
     // console.log(this.cartservice.data$)
     
@@ -34,13 +35,24 @@ export class CartComponent implements OnInit {
     this.notificationservice.Show_notification("Product Deleted from Cart")
   }
   nav(){
-    let ele:HTMLElement = document.getElementById('close_modal_cart') as HTMLElement 
-    ele.click();
-    this.router.navigate(['/checkout'],{queryParams:{data:JSON.stringify(this.cart_arr)}});
+    var falg=false;
+    for (var i=0;i<this.cart_arr.length;i++){
+      if(this.cart_arr[i].checked==true){
+        falg=true
+      }
+    }
+    if(falg){
+      let ele:HTMLElement = document.getElementById('close_modal_cart') as HTMLElement 
+      ele.click();
+      this.router.navigate(['/checkout'],{queryParams:{data:JSON.stringify(this.cart_arr)}});
+    }
+    else{
+      alert("Please Select any product in cart")
+    }
   }
-  convertcheckbox(id:number,eve:any){
+  convertcheckbox(id:number,eve:any,varianr_id:number){
     for (let i=0;i<this.cart_arr.length;i++){
-      if(this.cart_arr[i].id==id){
+      if(this.cart_arr[i].id==id && this.cart_arr[i].variant_id==varianr_id){
         this.cart_arr[i].checked=!this.cart_arr[i].checked;
         eve.target.checked=this.cart_arr[i].checked
       }

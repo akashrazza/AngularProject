@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit {
   arr_products : Product[] = [];
   page:number=1
   product_Search_input:string=""
+  role=localStorage.getItem('role')
   ngOnInit(): void {
     
     this.activateRouter.queryParams.subscribe(
@@ -102,6 +103,7 @@ export class ProductComponent implements OnInit {
       },
       (error)=>{console.log(error)})
     }
+    
   }
 
   Previous(){
@@ -129,9 +131,26 @@ export class ProductComponent implements OnInit {
     }
   }
   Notification = false;
-  Add_to_cart(ele:Product){
-    let cart_obj = new Cart(ele.id,ele.product_name,ele.price,ele.img,ele.category)
+  Add_to_cart(){
+    let ele=this.selected_product;
+    let variant_id = this.selected_variant;
+    if(this.selected_variant=='' || this.selected_product==''){ alert("Please Select a variant");return;}
+    let cart_obj = new Cart(ele.id,ele.product_name,ele.price,ele.img,ele.category,variant_id,1)
     this.cartservice.Add_Cart(cart_obj);
     this.notificationservice.Show_notification("Product "+ ele.product_name+" Added to Cart");
+    this.selected_product=''
+    this.selected_variant=''
+    let ele1:HTMLElement = document.getElementById('btn-close-variant-product') as HTMLElement 
+    ele1.click();
+  }
+  selected_product:any=''
+  select_product(ele:any){this.selected_product=ele}
+  selected_variant:any=''
+  select_variant_radio(ele:number){this.selected_variant=ele}
+  close_varinat_tab(){
+    let ele:HTMLElement = document.getElementById('btn-close-variant-product') as HTMLElement 
+    ele.click();
+    this.selected_product=''
+    this.selected_variant=''
   }
 }

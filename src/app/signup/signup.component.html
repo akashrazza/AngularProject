@@ -1,6 +1,6 @@
 <div class="modal fade" id="SignupModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="model-content">
+      <div class="model-content" *ngIf = "SignupPage">
        
         <div class="">
             
@@ -8,7 +8,7 @@
 
 <div class="signup-form" style="text-align: end;">	
     <button type="button" class="btn-close" id="close_modal_signup" (click)="close()" data-bs-dismiss="modal" aria-label="Close"></button>
-    <form  style="border-radius: 20px" [formGroup]="signupform" (ngSubmit)="onSubmit()">
+    <form  style="border-radius: 20px" [formGroup]="signupform" (ngSubmit)="NextButton()">
 		<h2>Create Account</h2>
 		<p class="lead">It's free and hardly takes more than 30 seconds.</p>
         <p *ngIf="duplicate_email" style="color:red" class="lead">This Email is taken.</p>
@@ -77,11 +77,12 @@
 					<i class="fa fa-lock"></i>
 					<i class="fa fa-check"></i>
 				</span>
-				<input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+				<input type="text" class="form-control" formControlName="confirm_password" name="confirm_password" placeholder="Confirm Password" required="required">
 			</div>
-        </div>         -->
+        </div>   -->
+        
 		<div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Next</button>
         </div>
 		<p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
     </form>
@@ -92,6 +93,71 @@
 </div>
 
 </div>
-</div>
+
+
+
+
+
+
+<div class="model-content" *ngIf = "SecurityPage">
+       
+    <div class="">
+        
+
+
+<div class="signup-form" style="text-align: end;">	
+<button type="button" class="btn-close" id="close_modal_signup" (click)="close()" data-bs-dismiss="modal" aria-label="Close"></button>
+<form  style="border-radius: 20px" [formGroup]="SecurityForm" (ngSubmit)="onSubmit()">
+    <h2>Security Setting</h2>
+    <p class="lead">It is used for recovery passowrd.</p>
+    
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="fa fa-lock"></i>
+                <i class="fa fa-check"></i>
+            </span>
+            <input type="date" [ngClass]="{ 'is-invalid': submitted && g.DOB.errors }"  class="form-control" formControlName="DOB" name="Date Of Birth" placeholder="Date Of Birth" required="required">
+            <div *ngIf="submitted && g.DOB.errors" class="invalid-feedback">
+                <div *ngIf="g.DOB.errors.required">Date Of Birth is required</div>
+            </div>
+        </div>
+    </div>       
+    <div class="form-floating form-group">
+        <select class="form-select" [ngClass]="{ 'is-invalid': submitted && g.question.errors }"  style="border: 0px;" formControlName="question" id="floatingSelect" aria-label="Floating label select example">
+            <option selected>Please choose a Security Questions</option>
+          <option *ngFor = "let que of SecurityQuestion" value="{{que}}">{{que}}</option>
+          
+        </select>
+        <div *ngIf="submitted && g.question.errors" class="invalid-feedback">
+            <div *ngIf="g.question.errors.required">Please Choose Security Question</div>
+        </div>
+        <label for="floatingSelect">Add Security Question.</label>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="fa fa-lock"></i>
+                <i class="fa fa-check"></i>
+            </span>
+            <input type="text" class="form-control"  [ngClass]="{ 'is-invalid': submitted && g.answer.errors }"  formControlName="answer" name="answer" placeholder="Answer" required="required">
+            <div *ngIf="submitted && g.answer.errors" class="invalid-feedback">
+                <div *ngIf="g.answer.errors.required">Answer is required</div>
+            </div>
+        </div>
+    </div> 
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+    </div>
+    <p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
+</form>
+<div class="text-center">Already have an account? <a href="#">Login here</a>.</div>
 </div>
 
+
+</div>
+
+</div>
+
+</div>
+</div>

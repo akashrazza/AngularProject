@@ -4,7 +4,7 @@
   <!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="model-content">
+      <div class="model-content" *ngIf="login_page">
         
         <div class="">
       
@@ -49,23 +49,34 @@
                 
             </div>
         <p class="small text-center">Login and Explorer World!</p>
+        <p class="small text-center" (click)="ForgetPasswordEvent()" style="cursor:pointer">Forget Password</p>
         </form>
-      <!-- <div class="text-center">Already have an account? <a href="#">Login here</a>.</div> -->
     </div>
-    
-
-
-
-
-
-
-
         </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="close_modal" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="Validate_user()">Login</button>
-        </div> -->
       </div>
+
+
+
+
+
+
+      <div class="model-content" *ngIf="forget_password_page">
+        <div class="">
+          <div class="signup-form" style="text-align: end;">	
+            <button type="button" class="btn-close" id="close_modal" (click)="close()" data-bs-dismiss="modal" aria-label="Close"></button>
+              <app-forget-password></app-forget-password>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="model-content" *ngIf="new_password_cnfrm">
+        
+       
+
+
+
     </div>
   </div>
 

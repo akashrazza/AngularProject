@@ -10,6 +10,10 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentSucessComponent } from './payment-sucess/payment-sucess.component';
+import { OrdersComponent } from './orders/orders.component';
 const routes: Routes = [
   {path:'',redirectTo:"home",pathMatch:"full"},
   {path:'home',component:HomeComponent},
@@ -17,8 +21,12 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent,canActivate:[RouteGuardService]},
   {path:'product',component:ProductComponent,canActivate:[RouteGuardService]},
   {path:'user',component:UserComponent,canActivate:[RouteGuardService]},
+  {path:'pay',component:PaymentComponent,canActivate:[RouteGuardService]},
   {path:'checkout',component:CheckoutComponent,canActivate:[RouteGuardService]},
+  {path:'addProduct',component:AddProductComponent,canActivate:[RouteGuardService]},
+  {path:'orders',component:OrdersComponent,canActivate:[RouteGuardService]},
   {path:'product_detail/:category/:id',component:ProductDetailComponent,canActivate:[RouteGuardService]},
+  {path:'payment_sucess/:id',component:PaymentSucessComponent,canActivate:[RouteGuardService]},
   {path:'**',component:PageNotFoundComponent},
   // {path:'login',component:LoginComponent},
 ];

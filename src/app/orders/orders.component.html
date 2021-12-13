@@ -1,0 +1,49 @@
+<div class="container">
+    <article class="card">
+        <header class="card-header"> My Orders / Tracking </header>
+        <div class="card-body">
+            <!-- {{OrderHistory|json}} -->
+            <div *ngFor = "let ele of OrderHistory">
+      
+            <h6>Order ID: {{ele.id}}</h6>
+            <article class="card">
+                <div class="card-body row">
+                    <div class="col"> <strong>Order Date:</strong> <br>{{ele.createdAt|date}} </div>
+                    <!-- <div class="col"> <strong>Shipping BY:</strong> <br> BLUEDART, | <i class="fa fa-phone"></i> +1598675986 </div>-->
+                    <div class="col"> <strong>Payment Status:</strong> <br> {{ele.Payment}}</div> 
+                    <div class="col"> <strong>Amount #:</strong> <br> {{ele.Amount}} </div> 
+                    <div class="col"> <button class="btn btn-danger" (click)="DeleteOrder(ele.id)">Cancle Order</button><button class="btn btn-primary" (click)="Track(ele.id)">Track Order</button> </div>
+                </div>
+            </article>
+            <div class="card" *ngIf="Active_Track && OrderId==ele.id && role=='admin'">
+                <div class="card-body row">
+                    <div class="col"> <strong>Order Id:</strong> <br><input type="text" class="form-control" disabled value={{ele.id}}></div>
+                    <div class="col"> <strong>Step Number </strong> <br><input type="text" class="form-control" disabled value={{trackingData[trackingData.length-1]?trackingData[trackingData.length-1].step+1:1}}></div>
+                    <div class="col"><br><button class="btn btn-primary" style="width: 100%;" [disabled]="trackingData[trackingData.length-1].step==4?true:false" (click)="NextStep(ele.id,trackingData[trackingData.length-1]?trackingData[trackingData.length-1].step+1:1)">Submit Next Step</button></div>
+                    <div class="col"><br><button class="btn btn-danger" style="width: 100%;" [disabled]="trackingData[trackingData.length-1]?false:true" (click)="DeleteStep(trackingData[trackingData.length-1].id,ele.id)">Revert Back A Step</button></div>
+                </div>
+            </div>
+            <div class="track" *ngIf="Active_Track && OrderId==ele.id">
+                <div class="step" [ngClass]="step1"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+                <div class="step " [ngClass]="step2"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
+                <div class="step" [ngClass]="step3"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+                <div class="step" [ngClass]="step4"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
+            </div>
+            <hr>
+            <ul class="row">
+                <li class="col-md-4" *ngFor="let ele1 of ele.product_arr">
+                    <figure class="itemside mb-3">
+                        <div class="aside"><img src={{ele1.img}} class="img-sm border"></div>
+                        <figcaption class="info align-self-center">
+                            <p class="title">{{ele1.product_name}} <br> {{ele1.Type}}</p> <span class="text-muted">{{ele1.price|currency:'INR'}} </span>
+                        </figcaption>
+                    </figure>
+                </li>
+                
+            </ul>
+            <hr> 
+        </div>
+        </div>
+        <a [routerLink]="['/product']" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to Home</a>
+    </article>
+</div>

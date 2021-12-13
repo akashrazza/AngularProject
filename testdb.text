@@ -1,0 +1,270 @@
+{
+      "id": 22,
+      "product_name": "Oppo A74 5g",
+      "Type": "Electronics",
+      "price": 32000,
+      "category": "Mobile",
+      "img": "assets/oppo A74 5g.jpg",
+      "tage": "Electronics,Mobile,apple"
+    },
+    {
+      "id": 23,
+      "product_name": "Real Me Narzo 50i",
+      "Type": "Electronics",
+      "price": 11999,
+      "category": "Mobile",
+      "img": "assets/realme_narzo 50i.jpg",
+      "tage": "Electronics,Mobile,apple"
+    },
+    {
+      "id": 24,
+      "product_name": "Samsung m32 5g",
+      "Type": "Electronics",
+      "price": 6529,
+      "category": "Mobile",
+      "img": "assets/samsung m32 5g.jpg",
+      "tage": "Electronics,Mobile,apple"
+    },
+    {
+      "id": 25,
+      "product_name": "Fashion Men Shirt",
+      "Type": "Clothing",
+      "price": 735,
+      "category": "shirt",
+      "img": "assets/IndianFashionMenShirt.jpg",
+      "tage": "Clothing,Shirt,Men"
+    },
+    {
+      "id": 26,
+      "product_name": "Indo Prime Men Shirt",
+      "Type": "Clothing",
+      "price": 735,
+      "category": "shirt",
+      "img": "assets/IndoPrimeCasualShirt.jpg",
+      "tage": "Clothing,Shirt,Men"
+    },
+    {
+      "id": 27,
+      "product_name": "Maxi Shirt",
+      "Type": "Clothing",
+      "price": 1235,
+      "category": "Dress",
+      "img": "assets/MaxiDress.jpg",
+      "tage": "Clothing,Maxi,Dress"
+    },
+    {
+      "id": 28,
+      "product_name": "Mi 80 cm",
+      "Type": "Electronics",
+      "price": 24459,
+      "category": "Tv",
+      "img": "assets/Mi80.jpg",
+      "tage": "Electronics,Mobile,Xiomi"
+    },
+    {
+      "id": 29,
+      "product_name": "One Plus 80 cm",
+      "Type": "Electronics",
+      "price": 24459,
+      "category": "Tv",
+      "img": "assets/OnePlus80.jpg",
+      "tage": "Electronics,Mobile,Xiomi"
+    },
+    {
+      "id": 30,
+      "product_name": "RARE Knee Long Dress",
+      "Type": "Clothing",
+      "price": 1235,
+      "category": "Dress",
+      "img": "assets/RAREKnee-LongDress.jpg",
+      "tage": "Clothing,Maxi,Dress"
+    },
+    {
+      "id": 31,
+      "product_name": "Samsung 80cm",
+      "Type": "Electronics",
+      "price": 29999,
+      "category": "Tv",
+      "img": "assets/Samsung80.jpg",
+      "tage": "Electronics,Mobile,Xiomi"
+    },
+    {
+      "id": 32,
+      "product_name": "Slim Shirt",
+      "Type": "Clothing",
+      "price": 1235,
+      "category": "Shirt",
+      "img": "assets/SlimShirt.jpg",
+      "tage": "Clothing,Maxi,Dress"
+    },
+    {
+      "id": 2,
+      "product_name": "Xiomi 11 Lite",
+      "Type": "Electronics",
+      "price": 24459,
+      "category": "Mobile",
+      "img": "assets/Xiomi 11 Lite 5g.jpg",
+      "tage": "Electronics,Mobile,Xiomi"
+    },
+    {
+      "id": 3,
+      "product_name": "Amazon Basis TV 80CM",
+      "Type": "Electronics",
+      "price": 57449,
+      "category": "TV",
+      "img": "assets/AmazonBasisTv80.jpg",
+      "tage": "Electronics,Tv,Amazon"
+    },
+    {
+      "id": 4,
+      "product_name": "Boat Earphone",
+      "Type": "Electronics",
+      "price": 599,
+      "category": "Earphone",
+      "img": "assets/BoatEarphone.jpg",
+      "tage": "Electronics,Earphone,Boat"
+    },
+    {
+      "id": 5,
+      "product_name": "Boat rockrex 255",
+      "Type": "Electronics",
+      "price": 999,
+      "category": "Earphone",
+      "img": "assets/BoatRock255.jpg",
+      "tage": "Electronics,Earphone,Boat"
+    },
+    {
+      "id": 6,
+      "product_name": "pTron Boom",
+      "Type": "Electronics",
+      "price": 43648,
+      "category": "Earphone",
+      "img": "assets/pTronBoom.jpg",
+      "tage": "Electronics,Mobile,apple"
+    },
+    {
+      "id": 7,
+      "product_name": "Fit Track Pants",
+      "Type": "Clothing",
+      "price": 700,
+      "category": "Pants",
+      "img": "assets/AlanJonesFitTrackPants.jpg",
+      "tage": "Clothing,Pants"
+    },
+    {
+      "id": 8,
+      "product_name": "Alan Jones Hoodies",
+      "Type": "Clothing",
+      "price": 399,
+      "category": "Hoodies",
+      "img": "assets/AlanJonesHoodies.jpg",
+      "tage": "Clothing,Hoodies,Alan"
+    },
+    {
+      "id": 9,
+      "product_name": "Cotton Shirt",
+      "Type": "Clothing",
+      "price": 500,
+      "category": "shirt",
+      "img": "assets/CottonRegular.jpg",
+      "tage": "Clothing,Shirt,H&M"
+    },
+    {
+      "id": 10,
+      "product_name": "Dennis Shirt",
+      "Type": "Clothing",
+      "price": 199,
+      "category": "shirt",
+      "img": "assets/DennisShirt.jpg",
+      "tage": "Clothing,Winter,H&M"
+    },
+    {
+      "id": 11,
+      "product_name": "Flare Maxi Dress",
+      "Type": "Clothing",
+      "price": 455,
+      "category": "Dress",
+      "img": "assets/FlareMaxiDress.jpg",
+      "tage": "Clothing,Dress,Maxi"
+    },
+    {
+      "id": 12,
+      "product_name": "Dennis Slim Shirt",
+      "Type": "Clothing",
+      "price": 235,
+      "category": "shirt",
+      "img": "assets/DennisSlimShirt.jpg",
+      "tage": "Clothing,Winter,H&M"
+    },
+    {
+      "id": 13,
+      "product_name": "Paracetamol",
+      "Type": "Medicine",
+      "price": 20,
+      "category": "Sun Pharma",
+      "img": "",
+      "tage": "Medicine,Doctor,Sun"
+    },
+    {
+      "id": 14,
+      "product_name": "Paracetamol",
+      "Type": "Medicine",
+      "price": 220,
+      "category": "Sun Pharma",
+      "img": "",
+      "tage": "Medicine,Doctor,Sun"
+    },
+    {
+      "id": 15,
+      "product_name": "Paracetamol",
+      "Type": "Medicine",
+      "price": 452,
+      "category": "Sun Pharma",
+      "img": "",
+      "tage": "Medicine,Doctor,Sun"
+    },
+    {
+      "id": 16,
+      "product_name": "Paracetamol",
+      "Type": "Medicine",
+      "price": 2900,
+      "category": "Sun Pharma",
+      "img": "",
+      "tage": "Medicine,Doctor,Sun"
+    },
+    {
+      "id": 17,
+      "product_name": "Paracetamol",
+      "Type": "Medicine",
+      "price": 23,
+      "category": "Sun Pharma",
+      "img": "",
+      "tage": "Medicine,Doctor,Sun"
+    },
+    {
+      "id": 18,
+      "product_name": "Paracetamol",
+      "Type": "Medicine",
+      "price": 43,
+      "category": "Sun Pharma",
+      "img": "",
+      "tage": "Medicine,Doctor,Sun"
+    },
+    {
+      "id": 19,
+      "product_name": "Paracetamol",
+      "Type": "Medicine",
+      "price": 54,
+      "category": "Sun Pharma",
+      "img": "",
+      "tage": "Medicine,Doctor,Sun"
+    },
+    {
+      "id": 20,
+      "product_name": "Paracetamol",
+      "Type": "Medicine",
+      "price": 67,
+      "category": "Sun Pharma",
+      "img": "",
+      "tage": "Medicine,Doctor,Sun"
+    }

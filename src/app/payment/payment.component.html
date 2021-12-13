@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row m-0">
+        <div class="col-md-12 col-12">
+            <div class="row">
+                <div class="col-6 mb-4">
+                    <div class="row box-right" style="height: 100%;">
+                        <div class="col-md-6 ps-0 ">
+                            <p class="ps-3 textmuted fw-bold h6 mb-0">TOTAL AMOUNT</p>
+                            <p class="h1 fw-bold d-flex"> <span class=" fas fa-dollar-sign textmuted pe-1 h6 align-text-top mt-1"></span>{{PaymentDetailsObject.amount}}</p>
+                            
+                        </div>
+                        <div class="col-md-3">
+                            <p>{{Address_data.first_name}} {{Address_data.last_name}}</p>
+                            <p>{{Address_data.address}}</p>
+                            <p>{{Address_data.email}}</p>
+                            <p>{{Address_data.phone}}</p>
+                            <p>{{Address_data.information}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 px-4 mb-4">
+                    <img style="    height: 100%;
+                    width: 100%;
+                    border-radius: 20px;" src="https://media3.giphy.com/media/l3q2FnW3yZRJVZH2g/giphy.gif?cid=790b761118f10549fd2bf53e87256196b976bc87df15989a&rid=giphy.gif&ct=g"/>
+                </div>
+                
+                <div class="col-12 px-0 mb-4" style="width: 100%;height: 100%;">
+                    <div class="box-left">
+                        <form novalidate (ngSubmit)="buy()" [formGroup]="stripeTest">
+                            
+                            <div id="card-element" class="field" style="    box-shadow: 0 0 5px 0px;
+                            padding: 10px;
+                            border-radius: 20px;
+                            margin-bottom: 15px;"></div>
+                            <button type="submit" class = "btn-custom" style="margin-left: 45%;">
+                              BUY
+                            </button>
+                          </form>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+

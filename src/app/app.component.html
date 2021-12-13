@@ -11,13 +11,16 @@
         <li class="nav-item" *ngIf="isLogin==false">
           <a class="nav-link" routerLinkActive = "active" [routerLink]="['/product']">Products</a>
         </li>
-        <li class="nav-item" *ngIf="isLogin==false">
+        <li class="nav-item" *ngIf="isLogin==false && role=='user'">
           <a class="nav-link" routerLinkActive = "active" [routerLink]="['/about']">About</a>
         </li>
-        <li class="nav-item" *ngIf="isLogin==false">
+        <li class="nav-item" *ngIf="isLogin==false && role=='user'">
           <a class="nav-link" routerLinkActive = "active" [routerLink]="['/contact']">Contact</a>
         </li>
         <li class="nav-item" *ngIf="isLogin==false">
+          <a class="nav-link" routerLinkActive = "active" [routerLink]="['/orders']">Orders</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogin==false && role=='admin'">
           <a class="nav-link" routerLinkActive = "active" [routerLink]="['/user']">User</a>
         </li>
       
@@ -38,7 +41,7 @@
             Signup
           </button>
         </li>
-        <li *ngIf="isLogin==false">
+        <li *ngIf="isLogin==false && role=='user'">
           <i class="fa fa-shopping-cart" style="font-size:30px;margin-right: 30px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
             
             <span class="position-absolute translate-middle badge rounded-pill bg-danger" style="font-size: .9rem;">
@@ -47,8 +50,8 @@
             </span>
           </i>
         </li>
-        <li>
-          <h4 style="font-size:30px;margin-right: 30px;" >Welcome {{user_name + "!"}}</h4>
+        <li style="display: flex;">
+          <span style="margin-right: 30px;align-self: center;" >Welcome {{user_name + "!"}}</span>
         </li>
       </ul>
     </div>

@@ -1,0 +1,30 @@
+<!-- <div class="modal fade" id="VariantModalProduct" tabindex="-1" aria-labelledby="VariantModalLabelProduct" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="model-content">
+        <div class="signup-form" style="text-align: end;">	
+        <button type="button" class="btn-close" id="btn-close-variant-product" (click)="close_varinat_tab()" data-bs-dismiss="modal" aria-label="Close"></button>
+          <form style="border-radius: 20px">
+          <h2>Variants</h2>
+          
+          <div class="">
+            <div  *ngFor="let vari of product.variant">
+                <div *ngIf="vari.quantity!=0" style="margin-top:10px;display: flex;justify-content: space-evenly;align-items: center;">
+                    <input type="radio" style="width: 20px;" id="featured-{{vari.id}}" name="featured" (click)="select_variant_radio(vari.id)">
+                    <div style="height: 50px;width: 50px;border-radius: 50px;border-width: 1px;border: solid;" [ngStyle]="{'background-color':vari.color}"></div>
+                    <label for="featured-{{vari.id}}" style="font-size: 20px;width: 20px;">{{vari.color}} {{vari.size}}</label>
+                </div>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 20px;">
+                  <button type="button" class="btn btn-primary btn-block btn-lg" (click)="AddToCart()">Add to Cart</button>
+                  
+              </div>
+          <p class="small text-center">Choose Your variant here.</p>
+          
+          </form>
+            
+       
+       </div>
+      </div>
+    </div>
+  </div> -->

@@ -11,7 +11,8 @@ import { UserService } from './user.service';
 export class AuthenticationService {
   arr_user :User[]=[];
   constructor(private http : HttpClient,private cartservice:CartService) { }
-  url : string = "http://localhost:3000/user"
+  // url : string = "http://localhost:3000/user"
+  url : string = "http://localhost:8000/user/login"
   Login(email:string,password:string):Observable<any>{
     
     var custom_url = this.url+"?email="+email+"&password="+password;

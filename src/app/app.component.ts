@@ -17,6 +17,7 @@ export class AppComponent {
   title = 'RouteDemo';
   isLogin = true;
   count:number=0
+  role:any=''
   constructor(private tostarservice:ToastrService,private authservice : AuthenticationService , private router : Router,private cartservice : CartService,private childComponent: ProductService){}
   ngOnInit(){
     // this.tostarservice.info("Product Added to Cart");
@@ -25,6 +26,7 @@ export class AppComponent {
   
   get_child(ele:string){
     this.isLogin=ele=='true'?false:true;
+    this.role=localStorage.getItem('role')
   }
   LogOut_event(){
     this.isLogin=true;
@@ -35,6 +37,11 @@ export class AppComponent {
   }
   update_count(c:number){
     this.count=c;
+  }
+  ngDoCheck(){
+    if(localStorage.getItem('IsLogin')=='true'){
+      this.isLogin=false;
+    }
   }
   user_name:string="";
   get_user(user:string){

@@ -7,34 +7,95 @@
       "city": "Siwan",
       "mobile_no": "8863830652",
       "email": "test@test.com",
-      "password": "123"
+      "password": "123",
+      "question": "What is your first mobile phone company?",
+      "answer": "Samsung",
+      "DOB": "13/08/1998",
+      "role": "admin"
     },
     {
-      "first_name": "raja",
-      "last_name": "kumar",
+      "first_name": "Raja",
+      "last_name": "Kumar",
       "city": "Siwan",
-      "mobile_no": "8863830652",
-      "email": "akashrazza@gmail.com",
-      "password": "123",
+      "mobile_no": "1234321234",
+      "email": "therajakumar@outlook.in",
+      "password": "Rahul",
+      "question": "What is your favorate food?",
+      "answer": "Litti",
+      "DOB": "2021-11-27",
       "id": 2
     },
     {
-      "first_name": "Tarun",
-      "last_name": "Komera",
-      "city": "Bhopal",
+      "first_name": "Raja",
+      "last_name": "Kumar",
+      "city": "Siwan",
       "mobile_no": "8863830653",
-      "email": "tarun@gmail.com",
+      "email": "akashrazza@gmail.com",
       "password": "123",
+      "question": "What is your Secrate name?",
+      "answer": "Raja",
+      "DOB": "2021-11-27",
       "id": 3
     },
     {
-      "first_name": "Jayesh",
-      "last_name": "patil",
-      "city": "Delhi",
-      "mobile_no": "1223456789",
-      "email": "jayesh@gmail.com",
-      "password": "12",
+      "first_name": "Raja ",
+      "last_name": "Kumar",
+      "city": "Siwan",
+      "mobile_no": "8765467890",
+      "email": "test@test1.com",
+      "password": "123",
+      "question": "What is your favorate food?",
+      "answer": "test",
+      "DOB": "2021-11-27",
       "id": 4
+    },
+    {
+      "first_name": "Raja",
+      "last_name": "Kumar",
+      "city": "Siwan",
+      "mobile_no": "1234564534",
+      "email": "test@test345.com",
+      "password": "123",
+      "question": "What is your favorate food?",
+      "answer": "Litti",
+      "DOB": "2000-07-20",
+      "id": 5
+    },
+    {
+      "first_name": "Kanhaiya",
+      "last_name": "Kumar",
+      "city": "Siwan",
+      "mobile_no": "9572431005",
+      "email": "kanh@gmail.com",
+      "password": "123",
+      "question": "What is your favorate food?",
+      "answer": "Litti",
+      "DOB": "2021-02-02",
+      "id": 6
+    },
+    {
+      "first_name": "Test",
+      "last_name": "test",
+      "city": "Siwan",
+      "mobile_no": "1232112345",
+      "email": "test@test42.com",
+      "password": "123",
+      "question": "What is your Secrate name?",
+      "answer": "Raja",
+      "DOB": "2021-11-24",
+      "id": 7
+    },
+    {
+      "first_name": "Test",
+      "last_name": "test",
+      "city": "test",
+      "mobile_no": "7654567898",
+      "email": "test@test36273.com",
+      "password": "Raja",
+      "question": "What is your Secrate name?",
+      "answer": "Test",
+      "DOB": "2021-11-26",
+      "id": 8
     }
   ],
   "products": [
@@ -45,7 +106,60 @@
       "price": 6999,
       "category": "Watche",
       "img": "https://m.media-amazon.com/images/I/51zwK5zBswL._SL1000_.jpg",
-      "tage": "Electronics,Watch,Fitbit"
+      "tage": "Electronics,Watch,Fitbit",
+      "description": [
+        "1.52” TruViewTM display – Industry leading display with the best-in-class resolution of 360*400 pixels for a sharper, brighter viewing experience.",
+        "24*7 wellness partner – Take a step towards complete wellness with Noise Health Suite. Track your SpO2 levels, heart rate, stress levels and sleep insights, right from your wrist.",
+        "Multiple sports mode – Crush those fitness goals with your choice of workout from 15 sports mode. Monitor your performance with every step, lap and stat.",
+        "A new face, every day – Never run out of choices to match your watch with your look, thanks to over 100+ cloud-based & customisable watch faces.",
+        "Up to 10-day battery – Your hustle doesn’t stop. Neither does the X-Fit 1. It’s designed to keep up with you."
+      ],
+      "specification": {
+        "Brand": "‎Noise",
+        "Manufacturer": "‎TSL, Fulongfuhe Road, Dongguan city - 523025",
+        "Model": "‎Wrb-sw-xfit1-std-gry_gry",
+        "Model Name": "‎X-Fit 1",
+        "Product Dimensions": "‎4.3 x 3.9 x 1.1 cm; 40 Grams",
+        "Item model number": "‎wrb-sw-xfit1-std-gry_gry",
+        "Mounting Hardware": "‎Smartwatch, Charging Cable, User Manual, Thank You Card",
+        "Batteries Required": "‎No",
+        "Country of Origin": "‎China",
+        "Net Quantity": "1 Piece",
+        "Generic Name": "Smartwatch"
+      },
+      "quantity": 0,
+      "variant": [
+        {
+          "id": 1,
+          "color": "black",
+          "quantity": 100,
+          "size": ""
+        },
+        {
+          "id": 2,
+          "color": "white",
+          "quantity": 100,
+          "size": ""
+        },
+        {
+          "id": 3,
+          "color": "red",
+          "quantity": 100,
+          "size": ""
+        },
+        {
+          "id": 4,
+          "color": "pink",
+          "quantity": 100,
+          "size": ""
+        },
+        {
+          "id": 5,
+          "color": "blue",
+          "quantity": 100,
+          "size": ""
+        }
+      ]
     },
     {
       "id": 21,
@@ -54,277 +168,62 @@
       "price": 13999,
       "category": "Mobile",
       "img": "assets/IQOO z3 5g.jpg",
-      "tage": "Electronics,Mobile,apple"
-    },
-    {
-      "id": 22,
-      "product_name": "Oppo A74 5g",
-      "Type": "Electronics",
-      "price": 32000,
-      "category": "Mobile",
-      "img": "assets/oppo A74 5g.jpg",
-      "tage": "Electronics,Mobile,apple"
-    },
-    {
-      "id": 23,
-      "product_name": "Real Me Narzo 50i",
-      "Type": "Electronics",
-      "price": 11999,
-      "category": "Mobile",
-      "img": "assets/realme_narzo 50i.jpg",
-      "tage": "Electronics,Mobile,apple"
-    },
-    {
-      "id": 24,
-      "product_name": "Samsung m32 5g",
-      "Type": "Electronics",
-      "price": 6529,
-      "category": "Mobile",
-      "img": "assets/samsung m32 5g.jpg",
-      "tage": "Electronics,Mobile,apple"
-    },
-    {
-      "id": 25,
-      "product_name": "Fashion Men Shirt",
-      "Type": "Clothing",
-      "price": 735,
-      "category": "shirt",
-      "img": "assets/IndianFashionMenShirt.jpg",
-      "tage": "Clothing,Shirt,Men"
-    },
-    {
-      "id": 26,
-      "product_name": "Indo Prime Men Shirt",
-      "Type": "Clothing",
-      "price": 735,
-      "category": "shirt",
-      "img": "assets/IndoPrimeCasualShirt.jpg",
-      "tage": "Clothing,Shirt,Men"
-    },
-    {
-      "id": 27,
-      "product_name": "Maxi Shirt",
-      "Type": "Clothing",
-      "price": 1235,
-      "category": "Dress",
-      "img": "assets/MaxiDress.jpg",
-      "tage": "Clothing,Maxi,Dress"
-    },
-    {
-      "id": 28,
-      "product_name": "Mi 80 cm",
-      "Type": "Electronics",
-      "price": 24459,
-      "category": "Tv",
-      "img": "assets/Mi80.jpg",
-      "tage": "Electronics,Mobile,Xiomi"
-    },
-    {
-      "id": 29,
-      "product_name": "One Plus 80 cm",
-      "Type": "Electronics",
-      "price": 24459,
-      "category": "Tv",
-      "img": "assets/OnePlus80.jpg",
-      "tage": "Electronics,Mobile,Xiomi"
-    },
-    {
-      "id": 30,
-      "product_name": "RARE Knee Long Dress",
-      "Type": "Clothing",
-      "price": 1235,
-      "category": "Dress",
-      "img": "assets/RAREKnee-LongDress.jpg",
-      "tage": "Clothing,Maxi,Dress"
-    },
-    {
-      "id": 31,
-      "product_name": "Samsung 80cm",
-      "Type": "Electronics",
-      "price": 29999,
-      "category": "Tv",
-      "img": "assets/Samsung80.jpg",
-      "tage": "Electronics,Mobile,Xiomi"
-    },
-    {
-      "id": 32,
-      "product_name": "Slim Shirt",
-      "Type": "Clothing",
-      "price": 1235,
-      "category": "Shirt",
-      "img": "assets/SlimShirt.jpg",
-      "tage": "Clothing,Maxi,Dress"
-    },
-    {
-      "id": 2,
-      "product_name": "Xiomi 11 Lite",
-      "Type": "Electronics",
-      "price": 24459,
-      "category": "Mobile",
-      "img": "assets/Xiomi 11 Lite 5g.jpg",
-      "tage": "Electronics,Mobile,Xiomi"
-    },
-    {
-      "id": 3,
-      "product_name": "Amazon Basis TV 80CM",
-      "Type": "Electronics",
-      "price": 57449,
-      "category": "TV",
-      "img": "assets/AmazonBasisTv80.jpg",
-      "tage": "Electronics,Tv,Amazon"
-    },
-    {
-      "id": 4,
-      "product_name": "Boat Earphone",
-      "Type": "Electronics",
-      "price": 599,
-      "category": "Earphone",
-      "img": "assets/BoatEarphone.jpg",
-      "tage": "Electronics,Earphone,Boat"
-    },
-    {
-      "id": 5,
-      "product_name": "Boat rockrex 255",
-      "Type": "Electronics",
-      "price": 999,
-      "category": "Earphone",
-      "img": "assets/BoatRock255.jpg",
-      "tage": "Electronics,Earphone,Boat"
-    },
-    {
-      "id": 6,
-      "product_name": "pTron Boom",
-      "Type": "Electronics",
-      "price": 43648,
-      "category": "Earphone",
-      "img": "assets/pTronBoom.jpg",
-      "tage": "Electronics,Mobile,apple"
-    },
-    {
-      "id": 7,
-      "product_name": "Fit Track Pants",
-      "Type": "Clothing",
-      "price": 700,
-      "category": "Pants",
-      "img": "assets/AlanJonesFitTrackPants.jpg",
-      "tage": "Clothing,Pants"
-    },
-    {
-      "id": 8,
-      "product_name": "Alan Jones Hoodies",
-      "Type": "Clothing",
-      "price": 399,
-      "category": "Hoodies",
-      "img": "assets/AlanJonesHoodies.jpg",
-      "tage": "Clothing,Hoodies,Alan"
-    },
-    {
-      "id": 9,
-      "product_name": "Cotton Shirt",
-      "Type": "Clothing",
-      "price": 500,
-      "category": "shirt",
-      "img": "assets/CottonRegular.jpg",
-      "tage": "Clothing,Shirt,H&M"
-    },
-    {
-      "id": 10,
-      "product_name": "Dennis Shirt",
-      "Type": "Clothing",
-      "price": 199,
-      "category": "shirt",
-      "img": "assets/DennisShirt.jpg",
-      "tage": "Clothing,Winter,H&M"
-    },
-    {
-      "id": 11,
-      "product_name": "Flare Maxi Dress",
-      "Type": "Clothing",
-      "price": 455,
-      "category": "Dress",
-      "img": "assets/FlareMaxiDress.jpg",
-      "tage": "Clothing,Dress,Maxi"
-    },
-    {
-      "id": 12,
-      "product_name": "Dennis Slim Shirt",
-      "Type": "Clothing",
-      "price": 235,
-      "category": "shirt",
-      "img": "assets/DennisSlimShirt.jpg",
-      "tage": "Clothing,Winter,H&M"
-    },
-    {
-      "id": 13,
-      "product_name": "Paracetamol",
-      "Type": "Medicine",
-      "price": 20,
-      "category": "Sun Pharma",
-      "img": "",
-      "tage": "Medicine,Doctor,Sun"
-    },
-    {
-      "id": 14,
-      "product_name": "Paracetamol",
-      "Type": "Medicine",
-      "price": 220,
-      "category": "Sun Pharma",
-      "img": "",
-      "tage": "Medicine,Doctor,Sun"
-    },
-    {
-      "id": 15,
-      "product_name": "Paracetamol",
-      "Type": "Medicine",
-      "price": 452,
-      "category": "Sun Pharma",
-      "img": "",
-      "tage": "Medicine,Doctor,Sun"
-    },
-    {
-      "id": 16,
-      "product_name": "Paracetamol",
-      "Type": "Medicine",
-      "price": 2900,
-      "category": "Sun Pharma",
-      "img": "",
-      "tage": "Medicine,Doctor,Sun"
-    },
-    {
-      "id": 17,
-      "product_name": "Paracetamol",
-      "Type": "Medicine",
-      "price": 23,
-      "category": "Sun Pharma",
-      "img": "",
-      "tage": "Medicine,Doctor,Sun"
-    },
-    {
-      "id": 18,
-      "product_name": "Paracetamol",
-      "Type": "Medicine",
-      "price": 43,
-      "category": "Sun Pharma",
-      "img": "",
-      "tage": "Medicine,Doctor,Sun"
-    },
-    {
-      "id": 19,
-      "product_name": "Paracetamol",
-      "Type": "Medicine",
-      "price": 54,
-      "category": "Sun Pharma",
-      "img": "",
-      "tage": "Medicine,Doctor,Sun"
-    },
-    {
-      "id": 20,
-      "product_name": "Paracetamol",
-      "Type": "Medicine",
-      "price": 67,
-      "category": "Sun Pharma",
-      "img": "",
-      "tage": "Medicine,Doctor,Sun"
+      "tage": "Electronics,Mobile,apple",
+      "description": [
+        "1.52” TruViewTM display – Industry leading display with the best-in-class resolution of 360*400 pixels for a sharper, brighter viewing experience.",
+        "24*7 wellness partner – Take a step towards complete wellness with Noise Health Suite. Track your SpO2 levels, heart rate, stress levels and sleep insights, right from your wrist.",
+        "Multiple sports mode – Crush those fitness goals with your choice of workout from 15 sports mode. Monitor your performance with every step, lap and stat.",
+        "A new face, every day – Never run out of choices to match your watch with your look, thanks to over 100+ cloud-based & customisable watch faces.",
+        "Up to 10-day battery – Your hustle doesn’t stop. Neither does the X-Fit 1. It’s designed to keep up with you."
+      ],
+      "specification": {
+        "Brand": "‎Noise",
+        "Manufacturer": "‎TSL, Fulongfuhe Road, Dongguan city - 523025",
+        "Model": "‎Wrb-sw-xfit1-std-gry_gry",
+        "Model Name": "‎X-Fit 1",
+        "Product Dimensions": "‎4.3 x 3.9 x 1.1 cm; 40 Grams",
+        "Item model number": "‎wrb-sw-xfit1-std-gry_gry",
+        "Mounting Hardware": "‎Smartwatch, Charging Cable, User Manual, Thank You Card",
+        "Batteries Required": "‎No",
+        "Country of Origin": "‎China",
+        "Net Quantity": "1 Piece",
+        "Generic Name": "Smartwatch"
+      },
+      "quantity": 0,
+      "variant": [
+        {
+          "id": 1,
+          "color": "black",
+          "quantity": 100,
+          "size": ""
+        },
+        {
+          "id": 2,
+          "color": "white",
+          "quantity": 100,
+          "size": ""
+        },
+        {
+          "id": 3,
+          "color": "red",
+          "quantity": 100,
+          "size": ""
+        },
+        {
+          "id": 4,
+          "color": "pink",
+          "quantity": 0,
+          "size": ""
+        },
+        {
+          "id": 5,
+          "color": "blue",
+          "quantity": 100,
+          "size": ""
+        }
+      ]
     }
-  ]
+  ],
+  "Address": {},
+  "Review": {}
 }
