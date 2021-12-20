@@ -16,8 +16,10 @@ export class CartService {
     // this.data.next(data2)
   }
   constructor(private http :HttpClient) { }
+
+  //Added to cart
   Add_Cart(cart_obj:Cart){
-    console.log(cart_obj)
+    
     var found:boolean=false;
     for (let i =0 ; i<this.data.getValue().length;i++){
         if(cart_obj.id==this.data.getValue()[i].id && cart_obj.variant_id==this.data.getValue()[i].variant_id){
@@ -32,7 +34,8 @@ export class CartService {
     this.data.next([...this.data.getValue(),cart_obj]);
     // this.cart.push(cart_obj);
     console.log(this.data,this.cart)
-    // console.log(this.cart)
+    // console.log(this.cart)new data---1 old data qunatity //1
+    console.log(this.data$)
     var body={
       user_id:localStorage.getItem('user_details'),
       product_id:cart_obj.id,

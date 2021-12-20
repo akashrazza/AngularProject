@@ -29,6 +29,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { PaymentSucessComponent } from './payment-sucess/payment-sucess.component';
 import { OrdersComponent } from './orders/orders.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { OrdersComponent } from './orders/orders.component';
     PaymentComponent,
     PaymentSucessComponent,
     OrdersComponent,
+    
     
   ],
   imports: [

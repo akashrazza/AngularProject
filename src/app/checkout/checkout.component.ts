@@ -20,7 +20,7 @@ export class CheckoutComponent implements OnInit {
   quantity = 0
   RadioAddressSelected = -1;
   submitted = false;
-  products_arr: number[] = []
+  products_arr: any[] = []
   AddressForUser: any = [];
   //Address Form 
   AddressForm = new FormGroup({
@@ -42,7 +42,7 @@ export class CheckoutComponent implements OnInit {
       this.quantity = 0
       for (let i = 0; i < this.arr.length; i++) {
         if (this.arr[i].checked) {
-          this.products_arr.push(this.arr[i].id)
+          this.products_arr.push([this.arr[i].id,this.arr[i].quantity,this.arr[i].price * this.arr[i].quantity])
           this.sum = this.sum + this.arr[i].price * this.arr[i].quantity;
           this.quantity = this.quantity + this.arr[i].quantity;
         }

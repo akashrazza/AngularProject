@@ -17,7 +17,7 @@ export class AppComponent {
   title = 'RouteDemo';
   isLogin = true;
   count:number=0
-  role:any=''
+  role:any=localStorage.getItem('role')
   constructor(private tostarservice:ToastrService,private authservice : AuthenticationService , private router : Router,private cartservice : CartService,private childComponent: ProductService){}
   ngOnInit(){
     // this.tostarservice.info("Product Added to Cart");

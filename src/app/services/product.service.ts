@@ -30,8 +30,11 @@ export class ProductService {
   //   return this.http.get(custom_url);
   // }
   GetProductsByName(product_name:string,page_no:number):Observable<any>{
-    let custom_url = this.url + "/getByName?product_name=" + product_name + "&_page="+page_no+"&_limit=9";
+    let custom_url = this.url + "/getByProductName?product_name=" + product_name + "&_page="+page_no+"&_limit=9";
     return this.http.get(custom_url);
   }
   
+  InsertProduct(obj:any):Observable<any>{
+    return this.http.post(this.url+'/insertproduct',obj,{headers:{'content-type':'application/json'},responseType:'text'})
+  }
 }

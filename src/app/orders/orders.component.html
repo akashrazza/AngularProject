@@ -51,8 +51,10 @@
                         <figure class="itemside mb-3">
                             <div class="aside"><img src={{ele1.img}} class="img-sm border"></div>
                             <figcaption class="info align-self-center">
-                                <p class="title">{{ele1.product_name}} <br> {{ele1.Type}}</p> <span
-                                    class="text-muted">{{ele1.price|currency:'INR'}} </span>
+                                <p class="title">{{ele1.product_name}} <br> {{ele1.Type}}</p> 
+                                <span class="text-muted">Quantity&nbsp;:&nbsp;{{ele1.quantity}} </span><hr/>
+                                <span
+                                    class="text-muted">{{ele1.amount|currency:'INR'}} </span>
                             </figcaption>
                         </figure>
                     </li>

@@ -69,7 +69,7 @@ export class PaymentComponent {
   }
 
 
-  OrderData = { AddressId: this.Address_data.id, products: this.paymentservice.GetPaymentDetails().products, user_id: localStorage.getItem('user_details'), Amount: this.PaymentDetailsObject.amount, Payment: "SUCCESS" }
+  OrderData = { AddressId: this.Address_data.id, products_quantity_amount: this.paymentservice.GetPaymentDetails().products, user_id: localStorage.getItem('user_details'), Amount: this.PaymentDetailsObject.amount, Payment: "SUCCESS" }
 
 //ON CLICK buy event
   buy() {
@@ -91,7 +91,8 @@ export class PaymentComponent {
                     console.log(err);
                   })
             }
-          }, (err) => {
+          },
+          (err) => {
             alert(err);
             console.log(err);
           })
