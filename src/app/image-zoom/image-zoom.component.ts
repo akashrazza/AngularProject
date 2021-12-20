@@ -36,7 +36,7 @@ export class ImageZoomComponent  {
     this.element.nativeElement.style.width = `${this.parentSize.width}px`;
     this.element.nativeElement.style.height = `${this.parentSize.height}px`;
   }
-
+  //For Zoom Image and moving image on mouse pointer move
   public imgZoom(event:any, zoom = 1): void {
     const img = event.target.children[0];
 
@@ -53,11 +53,11 @@ export class ImageZoomComponent  {
     // console.log(`\nx: ${posX} | y: ${posY}`);
 
     // console.log('img.width: ', img.width);
-
+    // mouse move event move image
     img.style.left = `-${(event.layerX * (zoom - 1))}px`;
     img.style.top = `-${(event.layerY * (zoom - 1))}px`;
   }
-
+  //For Reset image
   public resetImgZoom(event:any, zoom = 1): void {
     const img = event.target.children[0];
 

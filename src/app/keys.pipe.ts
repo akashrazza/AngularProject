@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'keys'
 })
 export class KeysPipe implements PipeTransform {
-
+  //Getting data into keys value format
   transform(value:any, size:number,page:number): any {
     let keys = [];
     for (let key in value) {

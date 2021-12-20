@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'slice'
 })
 export class SlicePipe implements PipeTransform {
-
+  //Slicing Data
   transform(value: any, size:number,page:number): any {
     console.log(value)
     if(page==1)

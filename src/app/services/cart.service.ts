@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
   cart:any[]=[]
-  private data = new BehaviorSubject(this.cart);
-  data$ = this.data.asObservable();
+  private data = new BehaviorSubject(this.cart);   
+  data$ = this.data.asObservable();   //Observable data
   url ='http://localhost:8000/user/cart'
   changeData(data2: Cart) {
 
@@ -19,7 +19,7 @@ export class CartService {
 
   //Added to cart
   Add_Cart(cart_obj:Cart){
-    
+    //For Obserbale
     var found:boolean=false;
     for (let i =0 ; i<this.data.getValue().length;i++){
         if(cart_obj.id==this.data.getValue()[i].id && cart_obj.variant_id==this.data.getValue()[i].variant_id){
@@ -42,11 +42,13 @@ export class CartService {
       variant:cart_obj.variant_id,
       quantity:cart_obj.quantity
     }
+    //For DB Add to cart
     this.http.post(this.url,body,{headers:{'content-type':'application/json'},responseType:'text'}).subscribe(data=>{
       console.log("Inserted Cart")
     },err=>{console.log(err)})
     
   }
+  //Get All cart from DB and set to Behaviour subject data
   Get_Cart(){
     console.log(this.cart)
     this.http.get<any[]>(this.url+'/'+localStorage.getItem('user_details'))
@@ -77,9 +79,13 @@ export class CartService {
     })
     return this.cart;
   }
+
+  //Delete from DB
   DeleteFromCart(id:any):Observable<any>{
     return this.http.delete(this.url+'/'+id,{responseType:'text'})
   }
+
+  //Delete from Behaviour subject
   Delete(id:number){
     let arr = this.data.getValue()
     let index=0
@@ -93,6 +99,8 @@ export class CartService {
     this.data.next(arr);
     this.DeleteFromCart(id).subscribe(data=>{console.log("Delete sucessfull")},err=>{console.log(err)})
   }
+
+  //Delete all from behaviourSubject data 
   delet_all(){
     this.data.next([])
     this.cart=[]

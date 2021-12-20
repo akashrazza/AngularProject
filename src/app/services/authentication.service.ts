@@ -13,12 +13,15 @@ export class AuthenticationService {
   constructor(private http : HttpClient,private cartservice:CartService) { }
   // url : string = "http://localhost:3000/user"
   url : string = "http://localhost:8000/user/login"
+
+  //Login Using Email and Passowrd
   Login(email:string,password:string):Observable<any>{
     
     var custom_url = this.url+"?email="+email+"&password="+password;
     return this.http.get(custom_url)
   }
 
+  //Logout Event
   Logout(){
     localStorage.setItem("IsLogin","false");
     this.cartservice.delet_all();

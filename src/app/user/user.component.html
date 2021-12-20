@@ -1,69 +1,70 @@
+<div style="background-color: #0d263b;height: 400px;">
 
-    <div style="background-color: #0d263b;height: 400px;">
-    
+</div>
+<div class="container" style="width: 60%;">
+    <div class="row">
+        <h1 class="User-header">Users</h1>
+        <img style="object-fit: cover; height: 400px;margin-top: -200px;" src="assets/user.jpeg">
     </div>
-    <div class="container" style="width: 60%;">
-        <div class="row">
-            <h1 class="User-header">Users</h1>
-            <img style="object-fit: cover; height: 400px;margin-top: -200px;" src="assets/user.jpeg">
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-sm text-center">
+
         </div>
-        <div class="row" style="margin-top: 50px;">
-          <div class="col-sm text-center">
-            
-          </div>
-      </div>
     </div>
-      <div class="container">
+</div>
+<div class="container">
     <div class="row" style="margin-top: 30px;">
-        
-                <div class="panel">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col col-sm-3 col-xs-12">
-                                <h4 class="title">User <span>List</span></h4>
-                            </div>
-                            <div class="col-sm-9 col-xs-12 text-right">
-                                <div class="btn_group">
-                                    <input type="text" class="form-control" [(ngModel)] = "Input_Id" placeholder="Id" (keyup)="Search_By_Id()">
-                                    <input type="text" class="form-control" [(ngModel)] = "Input_name" placeholder="Name" (keyup)="Search_By_Name()">
-                                </div>
-                            </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col col-sm-3 col-xs-12">
+                        <h4 class="title">User <span>List</span></h4>
+                    </div>
+                    <div class="col-sm-9 col-xs-12 text-right">
+                        <div class="btn_group">
+                            <input type="text" class="form-control" [(ngModel)]="Input_Id" placeholder="Id"
+                                (keyup)="Search_By_Id()">
+                            <input type="text" class="form-control" [(ngModel)]="Input_name" placeholder="Name"
+                                (keyup)="Search_By_Name()">
                         </div>
                     </div>
-                    <div class="panel-body table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>City</th>
-                                    <th>Mobile Number</th>
-                                    <!-- <th>Action</th> -->
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor = "let element of table_data">
-                                    <td>{{element.id}}</td>
-                                    <td>{{element.first_name}}</td>
-                                    <td>{{element.last_name}}</td>
-                                    <td>{{element.city}}</td>
-                                    <td>{{element.mobile_no}}</td>
-                                    <!-- <td>
+                </div>
+            </div>
+            <div class="panel-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>City</th>
+                            <th>Mobile Number</th>
+                            <!-- <th>Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let element of table_data">
+                            <td>{{element.id}}</td>
+                            <td>{{element.first_name}}</td>
+                            <td>{{element.last_name}}</td>
+                            <td>{{element.city}}</td>
+                            <td>{{element.mobile_no}}</td>
+                            <!-- <td>
                                         <ul class="action-list">
                                             <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
                                             <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
                                         </ul>
                                     </td> -->
-                                </tr>
-                                
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="panel-footer">
-                        
-                    </div>
-                </div>
-            
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+
+            </div>
+        </div>
+
     </div>

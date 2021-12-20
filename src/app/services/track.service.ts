@@ -8,19 +8,24 @@ import { Observable } from 'rxjs';
 export class TrackService {
 
   constructor(private http:HttpClient) { }
-  url = "http://localhost:8000/user/track"
+  url = "http://localhost:8000/user/track";
+
+  //Get Tracking
   GetTrackDetails(OrderId:any):Observable<any>{
     return this.http.get(this.url+'/'+OrderId,{responseType:'json'})
   }
 
+  //Create Track for Admin
   CreateTrack(obj:any):Observable<any>{
     return this.http.post(this.url,obj,{headers:{'content-type':'application/json'},responseType:'text'})
   }
 
+  //Delete A Track for Admin
   DeletTrack(id:any):Observable<any>{
     return this.http.delete(this.url+'/'+id,{responseType:'text'})
   }
 
+  //Update A Track for Admin
   UpdateTrack(id:any,obj:any):Observable<any>{
     return this.http.put(this.url+'/'+id,obj,{headers:{'content-type':'application/json'}})
   }

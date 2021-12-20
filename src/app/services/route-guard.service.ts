@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 export class RouteGuardService {
 
   constructor(private router : Router) { }
+
+  //Route Gaurd return Boolean value 
   canActivate(){
     var data = localStorage.getItem('IsLogin');
     if(data=='true'){

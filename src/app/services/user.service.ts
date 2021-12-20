@@ -12,11 +12,13 @@ export class UserService {
 
   url  = "http://localhost:8000/user";
 
+  //Get All uSer
   getuser():Observable<any>{
     var url = this.url + '/getAll';
     return this.http.get(url)
   }
   
+  //Create USer
   postdata(user_obj : User):Observable<any>{
     var header = {'content-type' : 'application/json'}
     user_obj.role="user";
@@ -25,24 +27,29 @@ export class UserService {
     return this.http.post(url,body,{'headers':header,responseType:'text'}) 
   }
 
+  //Get USer By ID ADmin
   Get_by_id(id:number):Observable<any>{
     return this.http.get(this.url+"/getById?id="+id)
   }
 
+  //GEt user by name Admin
   Get_by_name(name:string):Observable<any>{
     return this.http.get(this.url+"/getByName?first_name="+name)
   }
 
+  //Delete A user for Amdin
   delete ( id:number):Observable<any>{
     let custom_url = this.url+"/deleteuser/"+id;
     return this.http.delete(custom_url);
   }
 
+  //Verify When Forget Password
   VerifyUserCredential(email:string,question:string,answer:string,dob:Date):Observable<any>{
     var custom_url = this.url +"/varifyuser"+ "?question="+question+"&answer="+answer+"&DOB="+dob.toString()+"&email="+email;
     return this.http.get(custom_url);
   }
 
+  //Set New Passowrd
   SetPassword(user:User,id:number):Observable<any>{
     let custom_url = this.url +"/setpassword"+ "/" +id
     var header = {'content-type' : 'application/json'}

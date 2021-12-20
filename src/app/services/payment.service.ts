@@ -8,18 +8,24 @@ import { BehaviorSubject } from 'rxjs';
 export class PaymentService {
   payment_details:any={}
   private data = new BehaviorSubject(this.payment_details);
-  data$ = this.data.asObservable();
+  data$ = this.data.asObservable();  //Observable Payment details
   constructor(private http : HttpClient) { }
   url = 'http://localhost:8000/user/payment'
+
+  //Payment Confirmation send token
   PaymentConfirmation(obj:any):Observable<any>{
     return this.http.post(this.url,obj,{headers:{'content-type':'application/json'},responseType:'text'})
   }
 
+
+  //Add Payment details to behavoiurSubject data
   AddPaymetDetails(obj:any){
     console.log(obj)
     this.data.next(obj);
   }
 
+
+  //Get Payment details from behaviour subject data
   GetPaymentDetails(){
     return this.data.getValue();
   }

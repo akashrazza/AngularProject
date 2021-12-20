@@ -1,77 +1,91 @@
-<div class="modal fade" id="SignupModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="SignupModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="model-content" *ngIf = "SignupPage">
-       
-        <div class="">
-            
-  
+        <div class="model-content" *ngIf="SignupPage">
 
-<div class="signup-form" style="text-align: end;">	
-    <button type="button" class="btn-close" id="close_modal_signup" (click)="close()" data-bs-dismiss="modal" aria-label="Close"></button>
-    <form  style="border-radius: 20px" [formGroup]="signupform" (ngSubmit)="NextButton()">
-		<h2>Create Account</h2>
-		<p class="lead">It's free and hardly takes more than 30 seconds.</p>
-        <p *ngIf="duplicate_email" style="color:red" class="lead">This Email is taken.</p>
-        <div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-user"></i></span>
-				<input type="text" class="form-control" name="username" formControlName="first_name" placeholder="First Name" required="required" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" >
-                <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
-                    <div *ngIf="f.first_name.errors.required">First Name is required</div>
-                </div>
-			</div>
-        </div>
-        <div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-user"></i></span>
-				<input type="text" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }"  class="form-control" name="last_name" formControlName="last_name" placeholder="Last Name" required="required">
-                <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
-                    <div *ngIf="f.last_name.errors.required">Last Name is required</div>
-                </div>
-			</div>
+            <div class="">
 
-        </div>
-        <div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-user"></i></span>
-				<input type="text" class="form-control" name="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }"  formControlName="city" placeholder="City" required="required">
-                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-                    <div *ngIf="f.city.errors.required">City is required</div>
-                </div>
-			</div>
-        </div>
-        <div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-user"></i></span>
-				<input type="text" class="form-control" name="mobile_no" [ngClass]="{ 'is-invalid': submitted && f.mobile_no.errors }"  formControlName="mobile_no" placeholder="Mobile Number" required="required">
-                <div *ngIf="submitted && f.mobile_no.errors" class="invalid-feedback">
-                    <div *ngIf="f.mobile_no.errors.required">Mobile Number is required</div>
-                    <div *ngIf="f.mobile_no.errors.minlength">Min length will be 10</div>
-                    <div *ngIf="f.mobile_no.errors.pattern">Only Number type data</div>
-                </div>
-			</div>
-        </div>
-        
-        <div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-				<input type="email" class="form-control" formControlName="email" name="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  placeholder="Email Address" required="required">
-                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                    <div *ngIf="f.email.errors.required">Email is required</div>
-                    <div *ngIf="f.email.errors.pattern">Email type data</div>
-                </div>
-			</div>
-        </div>
-		<div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-				<input type="password" class="form-control"  formControlName="password" name="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  formControlName="password" placeholder="Password" required="required">
-                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                    <div *ngIf="f.password.errors.required">Password is required</div>
-                </div>
-			</div>
-        </div>
-		<!-- <div class="form-group">
+
+
+                <div class="signup-form" style="text-align: end;">
+                    <button type="button" class="btn-close" id="close_modal_signup" (click)="close()"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                    <form style="border-radius: 20px" [formGroup]="signupform" (ngSubmit)="NextButton()">
+                        <h2>Create Account</h2>
+                        <p class="lead">It's free and hardly takes more than 30 seconds.</p>
+                        <p *ngIf="duplicate_email" style="color:red" class="lead">This Email is taken.</p>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" name="username" formControlName="first_name"
+                                    placeholder="First Name" required="required"
+                                    [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }">
+                                <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                                    <div *ngIf="f.first_name.errors.required">First Name is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }"
+                                    class="form-control" name="last_name" formControlName="last_name"
+                                    placeholder="Last Name" required="required">
+                                <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                                    <div *ngIf="f.last_name.errors.required">Last Name is required</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" name="city"
+                                    [ngClass]="{ 'is-invalid': submitted && f.city.errors }" formControlName="city"
+                                    placeholder="City" required="required">
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <div *ngIf="f.city.errors.required">City is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" name="mobile_no"
+                                    [ngClass]="{ 'is-invalid': submitted && f.mobile_no.errors }"
+                                    formControlName="mobile_no" placeholder="Mobile Number" required="required">
+                                <div *ngIf="submitted && f.mobile_no.errors" class="invalid-feedback">
+                                    <div *ngIf="f.mobile_no.errors.required">Mobile Number is required</div>
+                                    <div *ngIf="f.mobile_no.errors.minlength">Min length will be 10</div>
+                                    <div *ngIf="f.mobile_no.errors.pattern">Only Number type data</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                                <input type="email" class="form-control" formControlName="email" name="email"
+                                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                                    placeholder="Email Address" required="required">
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                    <div *ngIf="f.email.errors.pattern">Email type data</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" formControlName="password" name="password"
+                                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                    formControlName="password" placeholder="Password" required="required">
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
 			<div class="input-group">
 				<span class="input-group-addon">
 					<i class="fa fa-lock"></i>
@@ -80,84 +94,93 @@
 				<input type="text" class="form-control" formControlName="confirm_password" name="confirm_password" placeholder="Confirm Password" required="required">
 			</div>
         </div>   -->
-        
-		<div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">Next</button>
-        </div>
-		<p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
-    </form>
-	<div class="text-center">Already have an account? <a href="#">Login here</a>.</div>
-</div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block btn-lg">Next</button>
+                        </div>
+                        <p class="small text-center">By clicking the Sign Up button, you agree to our <br><a
+                                href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
+                    </form>
+                    <div class="text-center">Already have an account? <a href="#">Login here</a>.</div>
+                </div>
 
 
-</div>
-
-</div>
-
-
-
-
-
-
-<div class="model-content" *ngIf = "SecurityPage">
-       
-    <div class="">
-        
-
-
-<div class="signup-form" style="text-align: end;">	
-<button type="button" class="btn-close" id="close_modal_signup" (click)="close()" data-bs-dismiss="modal" aria-label="Close"></button>
-<form  style="border-radius: 20px" [formGroup]="SecurityForm" (ngSubmit)="onSubmit()">
-    <h2>Security Setting</h2>
-    <p class="lead">It is used for recovery passowrd.</p>
-    
-    <div class="form-group">
-        <div class="input-group">
-            <span class="input-group-addon">
-                <i class="fa fa-lock"></i>
-                <i class="fa fa-check"></i>
-            </span>
-            <input type="date" [ngClass]="{ 'is-invalid': submitted && g.DOB.errors }"  class="form-control" formControlName="DOB" name="Date Of Birth" placeholder="Date Of Birth" required="required">
-            <div *ngIf="submitted && g.DOB.errors" class="invalid-feedback">
-                <div *ngIf="g.DOB.errors.required">Date Of Birth is required</div>
             </div>
+
         </div>
-    </div>       
-    <div class="form-floating form-group">
-        <select class="form-select" [ngClass]="{ 'is-invalid': submitted && g.question.errors }"  style="border: 0px;" formControlName="question" id="floatingSelect" aria-label="Floating label select example">
-            <option selected>Please choose a Security Questions</option>
-          <option *ngFor = "let que of SecurityQuestion" value="{{que}}">{{que}}</option>
-          
-        </select>
-        <div *ngIf="submitted && g.question.errors" class="invalid-feedback">
-            <div *ngIf="g.question.errors.required">Please Choose Security Question</div>
-        </div>
-        <label for="floatingSelect">Add Security Question.</label>
-      </div>
-      <div class="form-group">
-        <div class="input-group">
-            <span class="input-group-addon">
-                <i class="fa fa-lock"></i>
-                <i class="fa fa-check"></i>
-            </span>
-            <input type="text" class="form-control"  [ngClass]="{ 'is-invalid': submitted && g.answer.errors }"  formControlName="answer" name="answer" placeholder="Answer" required="required">
-            <div *ngIf="submitted && g.answer.errors" class="invalid-feedback">
-                <div *ngIf="g.answer.errors.required">Answer is required</div>
+
+
+
+
+
+
+        <div class="model-content" *ngIf="SecurityPage">
+
+            <div class="">
+
+
+
+                <div class="signup-form" style="text-align: end;">
+                    <button type="button" class="btn-close" id="close_modal_signup" (click)="close()"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                    <form style="border-radius: 20px" [formGroup]="SecurityForm" (ngSubmit)="onSubmit()">
+                        <h2>Security Setting</h2>
+                        <p class="lead">It is used for recovery passowrd.</p>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock"></i>
+                                    <i class="fa fa-check"></i>
+                                </span>
+                                <input type="date" [ngClass]="{ 'is-invalid': submitted && g.DOB.errors }"
+                                    class="form-control" formControlName="DOB" name="Date Of Birth"
+                                    placeholder="Date Of Birth" required="required">
+                                <div *ngIf="submitted && g.DOB.errors" class="invalid-feedback">
+                                    <div *ngIf="g.DOB.errors.required">Date Of Birth is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-floating form-group">
+                            <select class="form-select" [ngClass]="{ 'is-invalid': submitted && g.question.errors }"
+                                style="border: 0px;" formControlName="question" id="floatingSelect"
+                                aria-label="Floating label select example">
+                                <option selected>Please choose a Security Questions</option>
+                                <option *ngFor="let que of SecurityQuestion" value="{{que}}">{{que}}</option>
+
+                            </select>
+                            <div *ngIf="submitted && g.question.errors" class="invalid-feedback">
+                                <div *ngIf="g.question.errors.required">Please Choose Security Question</div>
+                            </div>
+                            <label for="floatingSelect">Add Security Question.</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock"></i>
+                                    <i class="fa fa-check"></i>
+                                </span>
+                                <input type="text" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && g.answer.errors }" formControlName="answer"
+                                    name="answer" placeholder="Answer" required="required">
+                                <div *ngIf="submitted && g.answer.errors" class="invalid-feedback">
+                                    <div *ngIf="g.answer.errors.required">Answer is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+                        </div>
+                        <p class="small text-center">By clicking the Sign Up button, you agree to our <br><a
+                                href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
+                    </form>
+                    <div class="text-center">Already have an account? <a href="#">Login here</a>.</div>
+                </div>
+
+
             </div>
+
         </div>
-    </div> 
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+
     </div>
-    <p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
-</form>
-<div class="text-center">Already have an account? <a href="#">Login here</a>.</div>
-</div>
-
-
-</div>
-
-</div>
-
-</div>
 </div>
