@@ -10,7 +10,7 @@ export class CartService {
   cart:any[]=[]
   private data = new BehaviorSubject(this.cart);   
   data$ = this.data.asObservable();   //Observable data
-  url ='http://localhost:8000/user/cart'
+  url ='https://shopbackend-v4n9.onrender.com/user/cart'
   changeData(data2: Cart) {
 
     // this.data.next(data2)

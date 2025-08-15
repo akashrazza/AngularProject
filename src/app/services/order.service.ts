@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class OrderService {
 
   constructor(private http: HttpClient) { }
-  url = "http://localhost:8000/user/"
+  url = "https://shopbackend-v4n9.onrender.com/user/"
 
   //Create Order
   CreateOrder(data:any):Observable<any>{

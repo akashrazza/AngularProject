@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  url:string = "http://localhost:8000/user"
+  url:string = "https://shopbackend-v4n9.onrender.com/user"
   constructor(private http : HttpClient) { }
 
   //Get All Products

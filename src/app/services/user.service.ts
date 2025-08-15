@@ -10,7 +10,7 @@ export class UserService {
 
   constructor( private http : HttpClient) { }
 
-  url  = "http://localhost:8000/user";
+  url  = "https://shopbackend-v4n9.onrender.com/user";
 
   //Get All uSer
   getuser():Observable<any>{

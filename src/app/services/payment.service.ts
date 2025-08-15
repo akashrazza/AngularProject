@@ -10,7 +10,7 @@ export class PaymentService {
   private data = new BehaviorSubject(this.payment_details);
   data$ = this.data.asObservable();  //Observable Payment details
   constructor(private http : HttpClient) { }
-  url = 'http://localhost:8000/user/payment'
+  url = 'https://shopbackend-v4n9.onrender.com/user/payment'
 
   //Payment Confirmation send token
   PaymentConfirmation(obj:any):Observable<any>{
